@@ -10,16 +10,13 @@ class RealTimeDatabase {
     required String password,
   }) async {
     try {
-      // Create user in Firebase Authentication
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      // Save user data to Firestore including password
       await _saveUserData(userCredential.user!.uid, name, email, password);
     } catch (e) {
-      // Handle errors
       throw Exception('Failed to sign up: $e');
     }
   }
@@ -29,10 +26,9 @@ class RealTimeDatabase {
       await _firestore.collection('users').doc(userId).set({
         'name': name,
         'email': email,
-        'password': password, // Store password securely if necessary
+        'password': password, 
       });
     } catch (e) {
-      // Handle errors
       throw Exception('Failed to save user data: $e');
     }
   }
