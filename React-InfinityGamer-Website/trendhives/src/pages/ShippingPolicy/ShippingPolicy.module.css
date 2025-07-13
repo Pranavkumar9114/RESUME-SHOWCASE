@@ -1,0 +1,134 @@
+.policyContainer {
+    margin: 0 auto;
+    padding: 2rem;
+    color: #f0f0f0;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+  }
+  
+  .policyHeader {
+    margin-top: 45px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+  
+  .policyHeader h1 {
+    color: coral;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .lastUpdated {
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  .policySection {
+    margin-bottom: 2.5rem;
+  }
+  
+  .policySection h2 {
+    color: coral;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid coral;
+    padding-left: 1rem;
+  }
+  
+  .policyList {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+  
+  .policyList li {
+    margin-bottom: 0.75rem;
+    color: white;
+  }
+  
+  .highlight {
+    color: coral;
+    font-weight: bold;
+  }
+  
+  .tableContainer {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  .shippingTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .shippingTable th,
+  .shippingTable td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #333;
+  }
+  
+  .shippingTable th {
+    background-color: #1a1a1a;
+    color: coral;
+  }
+  
+  .shippingTable tr:nth-child(even) {
+    background-color: #1a1a1a;
+  }
+  
+  .shippingTable tr:hover {
+    background-color: #222;
+  }
+  
+  .policyFooter {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #333;
+    text-align: center;
+  }
+  
+  .link {
+    color: coral;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #00cccc;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .policyContainer {
+      padding: 1.5rem;
+    }
+  
+    .policyHeader h1 {
+      font-size: 2rem;
+    }
+  
+    .policySection h2 {
+      font-size: 1.5rem;
+    }
+  
+    .shippingTable th,
+    .shippingTable td {
+      padding: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .policyContainer {
+      padding: 1rem;
+    }
+  
+    .policyHeader h1 {
+      font-size: 1.75rem;
+    }
+  
+    .policySection h2 {
+      font-size: 1.3rem;
+    }
+  }
+  

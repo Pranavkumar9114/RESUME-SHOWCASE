@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "title": "GTA 6",
+        "description": "Experience the most anticipated open-world game with next-gen graphics.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$69.99"
+    },
+    {
+        "id": 2,
+        "title": "Elden Ring: Shadow of the Erdtree",
+        "description": "The legendary RPG returns with a stunning expansion.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$49.99"
+    },
+    {
+        "id": 3,
+        "title": "Final Fantasy VII Rebirth",
+        "description": "A breathtaking reimagining of the classic RPG with a vast world.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$59.99"
+    },
+    {
+        "id": 4,
+        "title": "GTA 6",
+        "description": "Experience the most anticipated open-world game with next-gen graphics.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$69.99"
+    },
+    {
+        "id": 5,
+        "title": "Elden Ring: Shadow of the Erdtree",
+        "description": "The legendary RPG returns with a stunning expansion.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$49.99"
+    },
+    {
+        "id": 6,
+        "title": "Final Fantasy VII Rebirth",
+        "description": "A breathtaking reimagining of the classic RPG with a vast world.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$59.99"
+    },
+    {
+        "id": 7,
+        "title": "Elden Ring: Shadow of the Erdtree",
+        "description": "The legendary RPG returns with a stunning expansion.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$49.99"
+    },
+    {
+        "id": 8,
+        "title": "Final Fantasy VII Rebirth",
+        "description": "A breathtaking reimagining of the classic RPG with a vast world.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$59.99"
+    },
+    {
+        "id": 9,
+        "title": "Final Fantasy VII Rebirth",
+        "description": "A breathtaking reimagining of the classic RPG with a vast world.",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$59.99"
+    }
+]

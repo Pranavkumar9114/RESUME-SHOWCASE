@@ -1,0 +1,307 @@
+/* Base Colors */
+:root {
+
+    --text-primary: #f0f0f0; /* Light Text */
+    --text-secondary: #b3b3b3; /* Slightly Darker Text */
+    --accent: coral; /* Enhanced Accent Color */
+    --hover-accent: rgb(209, 66, 14); /* Hover Color */
+    --border: #333;
+    --link: coral; /* Link Color */
+  }
+  
+  .policyContainer {
+    margin: 0px auto;
+    padding: 2rem;
+    color: var(--text-primary);
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+  
+  .policyHeader {
+    margin-top: 45px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+  
+  .policyHeader h1 {
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease; /* Add animation on hover */
+  }
+  
+  .policyHeader h1:hover {
+    transform: translateY(-2px); /* Hover effect */
+  }
+  
+  .lastUpdated {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  .policySection {
+    margin-bottom: 2.5rem;
+    transition: transform 0.3s ease; /* Add hover scale */
+  }
+  
+  .policySection:hover {
+    transform: scale(1.01); /* Slight scale effect on hover */
+  }
+  
+  .policySection h2 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+  }
+  
+  .dataGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .dataCard {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dataCard li{
+    color: white;
+  }
+  
+  .dataCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dataIcon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dataCard h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .dataCard ul {
+    padding-left: 1.5rem;
+  }
+  
+  .dataCard li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .purposeContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .purposeItem {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent);
+  }
+  
+  .purposeItem h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .securityList {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  
+  .securityList li {
+    display: flex;
+    margin-bottom: 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease; /* Add animation on hover */
+    color: white;
+  }
+  
+  .securityList li:hover {
+    transform: translateY(-2px); /* Slight push effect */
+  }
+  
+  .securityIcon {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .securityList h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  
+  .securityNote {
+    background-color: rgba(126, 87, 194, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  .sharingTable {
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+  
+  .sharingTable table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .sharingTable th,
+  .sharingTable td {
+    padding: 1rem;
+    border: 1px solid #333;
+    color: var(--text-primary); /* Ensure table text is light */
+  }
+  
+  .sharingTable th {
+    background-color: #1a1a1a;
+    color: var(--accent);
+  }
+  
+  .sharingTable tr:nth-child(even) {
+    background-color: #1c1c1c; /* Slightly different shade for zebra effect */
+  }
+  
+  .sharingTable tr:hover {
+    background-color: #222; /* Darker on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .sharingDisclaimer {
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+  
+  .rightsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .rightCard {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .rightCard h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  
+  .rightCard p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .rightButton {
+    background-color: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rightButton:hover {
+    background-color: var(--hover-accent); /* Color change on hover */
+  }
+  
+  .rightsNote {
+    margin-top: 2rem;
+  }
+  
+  .policyFooter {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border);
+    text-align: center;
+  }
+  
+  .link {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: var(--hover-accent); /* Color change on hover */
+    text-decoration: underline;
+  }
+  
+  .copyright {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .policyContainer {
+      padding: 1.5rem;
+    }
+  
+    .policyHeader h1 {
+      font-size: 2rem;
+    }
+  
+    .policySection h2 {
+      font-size: 1.5rem;
+    }
+  
+    .dataGrid,
+    .purposeContainer,
+    .rightsContainer {
+      grid-template-columns: 1fr; /* Stack for smaller screens */
+    }
+  
+    .securityList li {
+      flex-direction: column; /* Stack icons and text */
+    }
+  
+    .securityIcon {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .policyContainer {
+      padding: 1rem;
+    }
+  
+    .policyHeader h1 {
+      font-size: 1.75rem;
+    }
+  
+    .policySection h2 {
+      font-size: 1.3rem;
+    }
+  }

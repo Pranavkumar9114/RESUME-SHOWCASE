@@ -1,0 +1,250 @@
+
+/* 🏠 Main Container */
+.description-container {
+    /* max-width: 960px; */
+    margin: 0px auto;
+    padding: 30px;
+    background: white;
+    /* border-radius: 12px; */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+/* 🔙 Back Button */
+.go-back {
+    left: 15px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #4a90e2;
+    margin-bottom: 10px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.go-back:hover {
+    background-color: #357ab7;
+    transform: scale(1.07);
+}
+
+/* 🖼️ Image Section */
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.03);
+}
+
+/* 📌 Details Section */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: slideInUp 1s ease-out;
+}
+
+/* 🏷️ Product Title */
+.details-container h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+}
+
+/* 📝 Description */
+.description {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 12px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+/* ⭐ Rating */
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* 💰 Price */
+.price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* 🛠️ Product Specifications */
+.product-specs {
+    margin-top: 18px;
+    padding: 12px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    color: black;
+}
+
+.product-specs h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-specs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-specs li {
+    font-size: 16px;
+    color: #555;
+    padding: 6px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-specs li:last-child {
+    border-bottom: none;
+}
+
+.product-specs li strong {
+    color: #222;
+}
+
+/* 🛒 Add to Cart Button */
+.add-to-cart {
+    display: block;
+    width: 10%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px);
+}
+
+li{
+    color: black;
+}
+
+h3,h4{
+    color: black;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+    .description-container {
+        max-width: 780px;
+        padding: 25px;
+    }
+
+    .details-container h2 {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 22px;
+    }
+
+    .add-to-cart {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .description-container {
+        max-width: 90%;
+        padding: 22px;
+    }
+
+    .details-container h2 {
+        font-size: 26px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .add-to-cart {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .go-back {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .details-container h2 {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 18px;
+    }
+
+    .add-to-cart {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

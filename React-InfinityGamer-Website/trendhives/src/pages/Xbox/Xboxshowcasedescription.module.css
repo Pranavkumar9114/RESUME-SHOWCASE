@@ -1,0 +1,292 @@
+
+/* 🎬 Container */
+.container,
+.description-container {
+  /* max-width: 1400px; Adjusted to match max width from Gaming */
+  margin: 0px auto;
+  padding: 20px;
+  background: #fff;
+  /* border-radius: 12px; */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+/* 🔙 Back Button */
+.backBtn,
+.go-back {
+  font-size: 18px; /* From Featured */
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* From Featured */
+  border-radius: 8px; /* From Featured */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 20px; /* From Featured */
+}
+
+.go-back {
+  padding: 10px 16px; /* Specific to Gaming */
+  font-weight: 600;    /* Specific to Gaming */
+  margin-bottom: 10px; /* Specific to Gaming */
+}
+
+.backBtn:hover,
+.go-back:hover {
+  background-color: #357ab7;
+  transform: scale(1.05); /* Adjusted from Gaming */
+}
+
+/* 🖼️ Image Section */
+.imageContainer,
+.image-container {
+  flex: 1;
+  width: 60%; /* From Featured */
+  text-align: center; /* Specific to Gaming */
+  margin-bottom: 20px;
+  opacity: 0; /* From Featured */
+  animation: fadeIn 2s ease forwards; /* From Featured */
+  margin: 0 auto;
+}
+
+/* Image */
+.image,
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* From Featured */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* From Featured */
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover,
+.image:hover {
+  transform: scale(1.05);
+}
+
+/* 📌 Main Content */
+.mainContent,
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* From Featured */
+  margin-top: 20px; /* From Gaming */
+  animation: slideInUp 1s ease-out;
+}
+
+/* 🏷️ Product Title */
+.icon{
+  color: green;
+}
+.title,
+.details-container h2 {
+  font-size: 36px; /* From Featured */
+  font-weight: bold;
+  color: #111; /* From Featured */
+  margin-bottom: 10px; /* From Featured */
+  animation: fadeIn 1.5s ease forwards; /* From Featured */
+}
+
+/* 📝 Description */
+.description,
+.about {
+  font-size: 18px; 
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 20px; /* From Featured */
+  white-space: pre-wrap; /* From Featured */
+  padding: 12px; /* From Gaming */
+  background: #f8f8f8; /* From Gaming */
+  border-radius: 8px; /* From Gaming */
+}
+
+/* ⭐ Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 22px; /* From Featured */
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* 💰 Price */
+.price {
+  font-size: 26px; /* Adjusted to align with Featured */
+  font-weight: bold;
+  color: #28a745; /* Adjusted to align with Featured */
+}
+
+/* 🛠️ Product Specifications */
+.productSpec,
+.specifications {
+  margin-top: 40px; /* From Featured */
+  padding: 12px; /* From Featured */
+  background: #f3f3f3; /* From Gaming */
+  border-radius: 10px; /* From Gaming */
+  color: black; /* From Gaming */
+}
+
+.productSpec h3,
+.specifications h3 {
+  font-size: 22px; /* From Featured */
+  color: #333;
+  margin-bottom: 10px; /* From Featured */
+  animation: fadeIn 2.7s ease-out forwards; /* From Featured */
+}
+
+.productSpec ul,
+.specifications ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.productSpec li,
+.specifications li {
+  font-size: 16px; /* From Featured */
+  color: #555; /* From Featured */
+  margin-bottom: 8px; /* From Featured */
+}
+
+.productSpec li strong,
+.specifications li strong {
+  font-weight: bold;
+  color: #222; /* Specific to Gaming */
+}
+
+/* 🛒 Add to Cart Button */
+.cartBtn,
+.add-to-cart {
+  padding: 15px 30px; /* From Featured */
+  font-size: 18px; /* From Gaming */
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cartBtn {
+  background-color: #f0c14b; /* From Featured */
+  color: #111;
+}
+
+.add-to-cart {
+  background-color: #ff6600; /* From Gaming */
+  color: white;
+}
+
+.cartBtn:hover {
+  background-color: #e5b647;
+  transform: translateY(-3px);
+}
+
+.add-to-cart:hover {
+  background-color: #e65c00; /* From Gaming */
+  transform: translateY(-3px);
+}
+li{
+  color: black;
+}
+
+h3,h4{
+  color: black;
+}
+/* 📱 Responsive Design */
+@media (max-width: 1390px) {
+  .container,
+  .description-container {
+      max-width: 365px; /* From Featured */
+      padding: 20px; /* From Featured */
+  }
+  
+  .mainContent {
+      flex-direction: column;
+      gap: 20px; /* From Featured */
+  }
+
+  .imageContainer,
+  .image-container {
+      max-width: 100%;
+  }
+
+  .textContent {
+      max-width: 100%;
+  }
+
+  .title {
+      font-size: 28px; /* From Featured */
+  }
+
+  .rating {
+      font-size: 18px; /* From Featured */
+  }
+
+  .description,
+  .about {
+      font-size: 16px; /* From Featured */
+  }
+
+  .price {
+      font-size: 20px; /* From Featured */
+  }
+
+  .cartBtn,
+  .buyNowBtn,
+  .add-to-cart {
+      font-size: 16px; /* From both styles */
+      padding: 12px; /* From Featured */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 24px; /* From Featured */
+  }
+
+  .description,
+  .about {
+      font-size: 14px; /* From Featured */
+  }
+
+  .price {
+      font-size: 18px; /* From Featured */
+  }
+
+  .cartBtn,
+  .buyNowBtn,
+  .add-to-cart {
+      font-size: 14px; /* From Featured */
+      padding: 10px; /* From Featured */
+  }
+
+  .productSpec h3 {
+      font-size: 20px; /* From Featured */
+  }
+
+  .productSpec li {
+      font-size: 14px; /* From Featured */
+  }
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}

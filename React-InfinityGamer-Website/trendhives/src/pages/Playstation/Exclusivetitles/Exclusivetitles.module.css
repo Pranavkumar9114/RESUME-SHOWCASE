@@ -1,0 +1,38 @@
+.exclusiveSection {
+    background: #121212;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .exclusiveSection h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .details {
+    padding: 1rem;
+  }
+  

@@ -1,0 +1,361 @@
+/* Base Styles */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #121212;
+    --bg-card: #1a1a1a;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --accent-green: #00ff66;
+    --accent-purple: #9933ff;
+    --accent-blue: #00ccff;
+    --card-hover: #252525;
+  }
+  
+  .container {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Banner Section */
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .bannerVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.3; /* Adjust for visibility behind text */
+  }
+  
+  .bannerOverlay {
+    text-align: center;
+  padding: 0 20px;
+  max-width: 800px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .bannerTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+    color: var(--text-primary);
+  }
+  
+  .bannerSubtitle {
+    font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  }
+  
+  
+  /* Features Section */
+  .featuresSection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    margin-bottom: 80px;
+  }
+  
+  .featureCard {
+    flex-basis: 22%;
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 3px solid var(--accent-blue);
+  }
+  
+  .featureCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 204, 255, 0.2);
+  }
+  
+  .featureIcon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .featureTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+  }
+  
+  .featureDescription {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+  
+  /* Products Section */
+  .productsSection {
+    padding: 0 5%;
+    margin-bottom: 80px;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    color: var(--text-primary);
+  }
+  
+  .sectionTitle::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-purple);
+  }
+  
+  .productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .productCard {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: var(--card-hover);
+  }
+  
+  .productImageContainer {
+    height: 200px;
+    overflow: hidden;
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .productCard:hover .productImage {
+    transform: scale(1.05);
+  }
+  
+  .productInfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .productTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+  }
+  
+  .productGenre {
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .productDescription {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    flex-grow: 1;
+  }
+  
+  .productFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .productPrice {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  
+  .addToCartButton {
+    background-color: transparent;
+    color: var(--accent-purple);
+    border: 2px solid var(--accent-purple);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .addToCartButton:hover {
+    background-color: var(--accent-purple);
+    color: #000;
+    box-shadow: 0 0 10px rgba(153, 51, 255, 0.5);
+  }
+  
+  /* CTA Section */
+  .ctaSection {
+    background-color: var(--bg-secondary);
+    padding: 60px 5%;
+    text-align: center;
+    border-top: 1px solid #2a2a2a;
+  }
+  
+  .ctaTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+  }
+  
+  .ctaDescription {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ctaForm {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .ctaInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    background-color: #2a2a2a;
+    color: var(--text-primary);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+  }
+  
+  .ctaInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-blue);
+  }
+  
+  .ctaButton {
+    background-color: var(--accent-blue);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 0 4px 4px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .ctaButton:hover {
+    background-color: #33d6ff;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .featureCard {
+      flex-basis: 45%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bannerTitle {
+      font-size: 2.5rem;
+    }
+  
+    .bannerSubtitle {
+      font-size: 1.2rem;
+    }
+  
+    .featureCard {
+      flex-basis: 100%;
+    }
+  
+    .productsGrid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  
+    .ctaForm {
+      flex-direction: column;
+    }
+  
+    .ctaInput {
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  
+    .ctaButton {
+      border-radius: 4px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner {
+      height: 400px;
+    }
+  
+    .bannerTitle {
+      font-size: 2rem;
+    }
+  
+    .bannerSubtitle {
+      font-size: 1rem;
+    }
+  
+    .sectionTitle {
+      font-size: 1.5rem;
+    }
+  }
+  

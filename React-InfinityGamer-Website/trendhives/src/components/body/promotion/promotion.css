@@ -1,0 +1,166 @@
+/* Ensure the body and container don't overflow */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* Prevent horizontal overflow */
+}
+
+.promotion-container {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .promo-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+/* Promo Text */
+.promo-text {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, -100%);
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.promo-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+.promo-text p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeSlideIn 1.2s ease-out forwards 0.5s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(50%, -100%);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make Text Pop on Hover */
+.promo-text:hover h1 {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.promo-text:hover p {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+  
+  .promo-text p {
+    font-size: 1.5rem;
+  }
+
+  .front-logo-text {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 2;
+  }
+  
+  .navbar-logo {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 2;
+  }
+  
+  .navbar-logo img {
+    height: 550px;
+  }
+/* Shop Now Button */
+.promo-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 15px;
+}
+
+.promo-btn:hover {
+  background-color: #cc5500;
+}
+
+  @media screen and (max-width: 1390px) {
+    .promo-text {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text */
+        text-align: center;
+        color: white; /* White text */
+        font-family: Arial, sans-serif;
+        width: 100%;
+      }
+      .promo-video {
+        object-position: center; /* Ensures video is centered */
+    }
+      .promo-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      
+      .promo-text p {
+        font-size: 1.5rem;
+      }
+    
+      .navbar-logo img {
+        height: 400px;
+        padding: 0px;
+        filter: brightness(0) invert(1); /* Turns white background transparent, but affects colors */
+        /* padding-bottom: 80px; */
+      }
+
+      .navbar-logo {
+        position: absolute; /* Fix the logo at the top center */
+        top: 0px; /* Adjust this value to your preference */
+        left: 50%;
+        transform: translateX(-50%); /* Center the logo horizontally */
+      }
+
+  }

@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "title": "Cyberpunk 2077",
+      "description": "A futuristic open-world RPG with immersive gameplay.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 2,
+      "title": "The Witcher 3",
+      "description": "An epic fantasy RPG with a deep story and vast world.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 3,
+      "title": "Elden Ring",
+      "description": "A stunning action RPG from the creators of Dark Souls.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 4,
+      "title": "Red Dead Redemption 2",
+      "description": "An open-world Western adventure with stunning realism.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 5,
+      "title": "God of War",
+      "description": "A legendary action-adventure game with Norse mythology.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 6,
+      "title": "Cyberpunk 2077",
+      "description": "A futuristic open-world RPG with immersive gameplay.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 7,
+      "title": "The Witcher 3",
+      "description": "An epic fantasy RPG with a deep story and vast world.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 8,
+      "title": "Elden Ring",
+      "description": "A stunning action RPG from the creators of Dark Souls.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 9,
+      "title": "Red Dead Redemption 2",
+      "description": "An open-world Western adventure with stunning realism.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    },
+    {
+      "id": 10,
+      "title": "God of War",
+      "description": "A legendary action-adventure game with Norse mythology.",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$59.99"
+    }
+  ]
+  

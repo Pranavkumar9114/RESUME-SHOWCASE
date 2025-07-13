@@ -1,0 +1,382 @@
+/* Main container */
+.checkoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #121212;
+    border-radius: 12px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    color: #e0e0e0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2a2a2a;
+  }
+
+  .ContinueShopping {
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .ContinueShopping:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .ContinueShopping:active {
+    background-color: #00408d; /* Even darker blue when pressed */
+    transform: scale(0.98);
+  }
+  
+  
+  /* Checkout title */
+  .checkoutTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+  }
+  
+  .checkoutTitle::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #7928ca, #ff0080);
+    border-radius: 3px;
+  }
+  
+  /* Bill summary section */
+  .billSummary {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .billHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .billInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #b0b0b0;
+    font-size: 14px;
+  }
+  
+  .billTitle {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  
+  /* Items list */
+  .itemsList {
+    margin-bottom: 25px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  
+  .itemsList::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .itemsList::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 10px;
+  }
+  
+  .itemsList::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+  }
+  
+  .billItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
+  }
+  
+  .billItem:hover {
+    background-color: #252525;
+  }
+  
+  .itemDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .itemName {
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .itemQuantity {
+    color: #999;
+    font-size: 14px;
+  }
+  
+  .itemPrice {
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  /* Bill details */
+  .billDetails {
+    margin-bottom: 25px;
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .billRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: #b0b0b0;
+  }
+  
+  .discountRow {
+    color: #4caf50;
+  }
+  
+  .billTotal {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 2px solid #444;
+    color: #ffffff;
+  }
+  
+  /* Action buttons */
+  .actionButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .downloadButton,
+  .payButton {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .downloadButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    margin: 30px auto;
+  }
+  
+  .payButton {
+    background: linear-gradient(135deg, #7928ca, #ff0080);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);
+  }
+  
+  .downloadButton:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+  
+  .payButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 128, 0.4);
+  }
+  
+  .downloadButton:active,
+  .payButton:active {
+    transform: translateY(1px);
+  }
+  
+  .payButton:disabled {
+    background: linear-gradient(135deg, #444, #666);
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+  }
+  
+  /* Success message */
+  .successMessage {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    color: #4caf50;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .successMessage h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: white;
+  }
+  
+  /* Error message */
+  .errorMessage {
+    color: #ff5252;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid rgba(255, 82, 82, 0.3);
+    background-color: rgba(255, 82, 82, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .checkoutContainer {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    .actionButtons {
+      flex-direction: column;
+    }
+  
+    .downloadButton,
+    .payButton {
+      width: 100%;
+    }
+  }
+  
+  /* Form validation styles */
+  /* input:invalid,
+  select:invalid {
+    border: 2px solid #ff5252;
+    background-color: rgba(255, 82, 82, 0.05);
+  } */
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #7928ca;
+    box-shadow: 0 0 0 2px rgba(121, 40, 202, 0.2);
+  }
+  
+  /* Loading animation for the pay button */
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  .payButton:disabled {
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Coupon code section (if needed) */
+  .couponSection {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .couponInput {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #252525;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  .couponButton {
+    padding: 0 15px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .couponButton:hover {
+    background-color: #333;
+  }
+  
+  /* Additional styles for better visual hierarchy */
+  .sectionTitle {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  /* Tooltip styles for form validation */
+  .tooltip {
+    position: relative;
+  }
+  
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  

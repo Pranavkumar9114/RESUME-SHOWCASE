@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "name": "PlayStation 5 Ultimate Bundle",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$699",
+      "rating": "4.8",
+      "details": "Includes PS5 Console, DualSense Controller, and 3 Exclusive Games."
+    },
+    {
+      "id": 2,
+      "name": "Xbox Series X Gamer Pack",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$649",
+      "rating": "4.7",
+      "details": "Includes Xbox Series X, Extra Controller, and Game Pass Subscription."
+    },
+    {
+      "id": 3,
+      "name": "Nintendo Switch Adventure Pack",
+      "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+      "price": "$399",
+      "rating": "4.6",
+      "details": "Nintendo Switch, Joy-Con Controllers, and Top 5 Adventure Games."
+    },
+    {
+        "id": 4,
+        "name": "PlayStation 5 Ultimate Bundle",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$699",
+        "rating": "4.8",
+        "details": "Includes PS5 Console, DualSense Controller, and 3 Exclusive Games."
+      },
+      {
+        "id": 5,
+        "name": "Xbox Series X Gamer Pack",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$649",
+        "rating": "4.7",
+        "details": "Includes Xbox Series X, Extra Controller, and Game Pass Subscription."
+      },
+      {
+        "id": 6,
+        "name": "Nintendo Switch Adventure Pack",
+        "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+        "price": "$399",
+        "rating": "4.6",
+        "details": "Nintendo Switch, Joy-Con Controllers, and Top 5 Adventure Games."
+      }
+  ]
+  

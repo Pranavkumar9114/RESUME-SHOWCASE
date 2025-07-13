@@ -1,0 +1,211 @@
+/* General Styling */
+.consoleBundles {
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Section Title */
+.sectionTitle {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+.sectionTitle::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: #ff5733;
+    margin: 10px auto 0;
+}
+
+/* Grid Layout */
+.bundleGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+/* Bundle Card */
+.bundleCard {
+    background: linear-gradient(135deg, #232526, #414345);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    width: 320px;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+}
+
+.bundleCard:hover {
+    transform: scale(1.08) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 0 15px rgba(255, 92, 92, 0.8), 
+                0 0 30px rgba(92, 255, 92, 0.8), 
+                0 0 45px rgba(92, 92, 255, 0.8);
+}
+
+/* Bundle Image */
+.bundleImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.bundleCard:hover .bundleImage {
+    transform: scale(1.05);
+}
+
+/* Bundle Content */
+.bundleContent {
+    text-align: left;
+    padding: 18px;
+}
+
+.bundleTitle {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.bundleDescription {
+    font-size: 1rem;
+    color: #ddd;
+    margin: 10px 0;
+}
+
+/* Footer (Price & Button) */
+.bundleFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.bundlePrice {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00e676;
+}
+
+.bundleButton {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.bundleButton:hover {
+    background-color: #c70039;
+    transform: scale(1.1);
+}
+
+/* Rating Badge */
+.bundleRating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    /* background: linear-gradient(135deg, #ffea00, #ff9800; */
+    background: linear-gradient(135deg, #1a1a40, #000000);
+    color: gold;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+    transform: translateZ(20px); /* Gives depth so it lifts with the card */
+    z-index: 2; /* Keeps it visually on top */
+}
+
+
+@media (max-width: 1500px) {
+    .bundleGrid {
+      width: calc(100% - 40px); /* Adjust width dynamically */
+      max-width: 100vw; /* Prevents overflow */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0 auto; /* Centers container */
+      overflow-x: hidden;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1390px) {
+    
+    .bundleCard {
+        width: 150%;
+    }
+    .bundleGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 70px;
+        justify-items: center;
+    }
+    .bundleImage {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.3s;
+    }
+    .bundleTitle {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #ffcc00;
+    }
+    
+    .bundleDescription {
+        font-size: 10px;
+        color: #ddd;
+        margin: 10px 0;
+    }
+    .bundleContent {
+        text-align: center;
+        padding: 2px;
+        padding-top: 10px;
+    }
+    .bundleButton {
+        background-color: #ff5733;
+        color: white;
+        padding: 7px 9px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 10px;
+        transition: 0.3s;
+        font-weight: bold;
+    }
+    .bundlePrice {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #00e676;
+    }
+}

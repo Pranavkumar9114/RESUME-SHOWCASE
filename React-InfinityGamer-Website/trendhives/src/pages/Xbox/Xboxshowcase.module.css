@@ -1,0 +1,1308 @@
+/* Base Styles */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #0e0e0e;
+  color: #ffffff;
+  font-family: "Segoe UI", "Bahnschrift", sans-serif;
+  overflow-x: hidden;
+  --xbox-green: #107c10;
+  --xbox-green-glow: rgba(16, 124, 16, 0.6);
+  --xbox-green-light: #2bbd2b;
+  --dark-bg: #0e0e0e;
+  --darker-bg: #080808;
+  --light-bg: #1a1a1a;
+  --light-text: #ffffff;
+  --gray-text: #a0a0a0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--xbox-green-glow);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(16, 124, 16, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 124, 16, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    box-shadow: 0 0 5px var(--xbox-green), 0 0 10px var(--xbox-green);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--xbox-green), 0 0 30px var(--xbox-green);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--xbox-green), 0 0 10px var(--xbox-green);
+  }
+}
+
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+}
+
+@keyframes cardPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Common section styles */
+.hero,
+.featuredSection,
+.carouselSection,
+.gamePassSection,
+.performanceSection,
+.testimonialsSection {
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* Section Header Styles */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--xbox-green);
+  margin: 0.8rem auto 0;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--gray-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
+  transform: translateY(30px);
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(16, 124, 16, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  max-width: 600px;
+  z-index: 2;
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1;
+  color: var(--light-text);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.titleLine {
+  display: block;
+  animation: slideInLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+.titleLine:nth-child(2) {
+  animation-delay: 0.3s;
+  color: var(--xbox-green);
+  font-size: 5rem;
+  letter-spacing: -2px;
+  margin-top: -0.5rem;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--xbox-green-light);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--gray-text);
+  animation: fadeIn 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.heroCta {
+  animation: fadeIn 1s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+.ctaButton {
+  position: relative;
+  background-color: var(--xbox-green);
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.ctaText {
+  position: relative;
+  z-index: 2;
+}
+
+.ctaGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: skewX(-20deg);
+  transition: transform 0.5s ease;
+  z-index: 1;
+  transform: translateX(-100%);
+}
+
+.ctaButton:hover {
+  background-color: #0e6a0e;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ctaButton:hover .ctaGlow {
+  transform: translateX(100%);
+  transition: transform 1s ease;
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}
+
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.heroImage {
+  position: relative;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.consoleImage {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(16, 124, 16, 0.3));
+  transition: transform 0.5s ease;
+}
+
+.consoleGlow {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, var(--xbox-green-glow) 0%, rgba(16, 124, 16, 0) 70%);
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: glow 3s ease-in-out infinite;
+}
+
+.heroImageContainer:hover .consoleImage {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  animation: fadeIn 1s ease-out 1.2s forwards;
+  opacity: 0;
+}
+
+.scrollArrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--xbox-green);
+  border-bottom: 2px solid var(--xbox-green);
+  transform: rotate(45deg);
+  margin-bottom: 10px;
+  animation: scrollArrow 2s ease-in-out infinite;
+}
+
+.scrollText {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Featured Games Section */
+
+.gameCardDescription {
+  font-size: 0.95rem;
+  color: #cccccc;
+  margin: 6px 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+
+.addToCartButton {
+  background-color: #107c10; /* Xbox green */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+
+  /* Button hover effect */
+  &:hover {
+    background-color: #0e6a0e;
+  }
+}
+
+
+.featuredSection {
+  padding: 6rem 2rem;
+  background-color: var(--darker-bg);
+  transform: translateY(30px);
+  position: relative;
+}
+
+.featuredSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(16, 124, 16, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+.gamesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.gameCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  animation: cardPop 0.5s ease-out forwards;
+  opacity: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gameCard:hover .gameCardImage {
+  transform: scale(1.05);
+}
+
+.gameCard:hover .gameCardGlow {
+  opacity: 1;
+}
+
+.gameImageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.gameCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.exclusiveBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--xbox-green);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gameCardContent {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gameCardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+}
+
+.gameCardGenre {
+  font-size: 0.9rem;
+  color: var(--xbox-green-light);
+  margin-bottom: 0.5rem;
+}
+
+.gameCardPlatform {
+  font-size: 0.8rem;
+  color: var(--gray-text);
+}
+
+.gameCardGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--xbox-green-glow);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Carousel Section */
+.carouselSection {
+  padding: 6rem 2rem;
+  background-color: var(--dark-bg);
+  transform: translateY(30px);
+  position: relative;
+}
+
+.carouselSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23107c10' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+}
+
+.carousel:active {
+  cursor: grabbing;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.activeSlide .slideImage:hover {
+  transform: scale(1.05);
+}
+
+.exclusiveBanner {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--xbox-green);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slideInfo {
+  padding: 1.5rem;
+  background-color: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 2px solid var(--xbox-green);
+}
+
+.slideTitle {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+  font-weight: 700;
+}
+
+.slideDescription {
+  font-size: 1rem;
+  color: var(--gray-text);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.slideMetadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.releaseDate {
+  font-size: 0.9rem;
+  color: var(--xbox-green);
+  font-weight: 600;
+}
+
+.slideDetailsButton {
+  background-color: transparent;
+  color: var(--light-text);
+  border: 1px solid var(--xbox-green);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slideDetailsButton:hover {
+  background-color: var(--xbox-green);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+.carouselButton:hover {
+  background-color: var(--xbox-green);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 15px var(--xbox-green-glow);
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 0 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  background-color: var(--xbox-green);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px var(--xbox-green-glow);
+}
+
+.indicator:hover {
+  background-color: #555;
+  transform: scale(1.2);
+}
+
+/* Game Pass Section */
+.gamePassSection {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #0a0a0a, #151515);
+  transform: translateY(30px);
+  position: relative;
+  overflow: hidden;
+}
+
+.gamePassPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(16, 124, 16, 0.15) 0%, rgba(0, 0, 0, 0) 25%),
+    radial-gradient(circle at 80% 70%, rgba(16, 124, 16, 0.1) 0%, rgba(0, 0, 0, 0) 25%);
+  z-index: 0;
+}
+
+.gamePassContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.gamePassLogoContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.gamePassLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--xbox-green);
+  border-radius: 8px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.gamePassText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gamePassGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: transparent;
+  box-shadow: 0 0 30px var(--xbox-green-glow);
+  animation: pulse 2s infinite;
+  z-index: 1;
+}
+
+.gamePassTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-text);
+  font-weight: 700;
+}
+
+.gamePassDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--gray-text);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gamePassFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.gamePassFeature {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.featureCheck {
+  color: var(--xbox-green);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.gamePassButton {
+  position: relative;
+  background-color: transparent;
+  color: white;
+  border: 2px solid var(--xbox-green);
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.buttonBorder {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--xbox-green);
+  border-radius: 4px;
+  animation: borderGlow 2s infinite;
+  pointer-events: none;
+}
+
+.gamePassButton:hover {
+  background-color: var(--xbox-green);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gamePassButton:active {
+  transform: translateY(-1px);
+}
+
+/* Performance Section */
+.performanceSection {
+  padding: 6rem 2rem;
+  background-color: var(--darker-bg);
+  transform: translateY(30px);
+  position: relative;
+}
+
+.performanceSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(16, 124, 16, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+.performanceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.performanceCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: cardPop 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.performanceCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--xbox-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.performanceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.performanceCard:hover::before {
+  transform: scaleX(1);
+}
+
+.performanceIconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(16, 124, 16, 0.1);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  color: var(--xbox-green);
+  transition: all 0.3s ease;
+}
+
+.performanceCard:hover .performanceIconContainer {
+  background-color: var(--xbox-green);
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.featureIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.performanceTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--light-text);
+}
+
+.performanceDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-text);
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  padding: 6rem 2rem;
+  background-color: var(--light-bg);
+  transform: translateY(30px);
+  position: relative;
+}
+
+.testimonialsSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(16, 124, 16, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonialCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: cardPop 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.testimonialRating {
+  margin-bottom: 1rem;
+}
+
+.star {
+  color: var(--xbox-green);
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.emptyStar {
+  color: #333;
+  font-size: 1.2rem;
+  margin-right: 2px;
+}
+
+.testimonialQuote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--light-text);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonialAuthor {
+  font-size: 0.9rem;
+  color: var(--gray-text);
+  text-align: right;
+}
+
+/* Footer */
+.footer {
+  padding: 4rem 2rem;
+  background-color: var(--darker-bg);
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--xbox-green), transparent);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.footerLogo {
+  margin-bottom: 1rem;
+}
+
+.xboxLogo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--light-text);
+  letter-spacing: 2px;
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footerLink {
+  color: var(--gray-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+}
+
+.footerLink::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--xbox-green);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.footerLink:hover {
+  color: var(--xbox-green);
+}
+
+.footerLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.footerBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  color: var(--gray-text);
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background-color: var(--xbox-green);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    padding: 2rem 4rem;
+    justify-content: space-between;
+  }
+
+  .heroContent {
+    padding: 0;
+    text-align: left;
+  }
+
+  .heroImageContainer {
+    margin-bottom: 0;
+  }
+
+  .footerTop {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 5rem;
+  }
+
+  .titleLine:nth-child(2) {
+    font-size: 6rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+
+  .gamePassTitle {
+    font-size: 3rem;
+  }
+
+  .footerBottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .titleLine:nth-child(2) {
+    font-size: 3.8rem;
+  }
+
+  .tagline,
+  .subtitle {
+    text-align: center;
+  }
+
+  .heroCta {
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel {
+    height: 450px;
+  }
+
+  .carouselButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .prevButton {
+    left: 10px;
+  }
+
+  .nextButton {
+    right: 10px;
+  }
+
+  .gamePassFeatures {
+    text-align: center;
+  }
+
+  .gamePassFeature {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 400px;
+  }
+
+  .slideTitle {
+    font-size: 1.5rem;
+  }
+
+  .slideDescription {
+    font-size: 0.9rem;
+  }
+
+  .gamePassTitle {
+    font-size: 2rem;
+  }
+
+  .gamePassDescription {
+    font-size: 1rem;
+  }
+
+  .footerNav {
+    gap: 1rem;
+  }
+}
+

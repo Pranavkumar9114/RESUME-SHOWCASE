@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap");
+
+/* Base styles and container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1c1f26, #2a3140, #3c4f66, #4d6279);
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 255, 200, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 0, 136, 0.03) 0%, transparent 20%);
+  font-family: "Orbitron", sans-serif;
+  color: #e0e0ff;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+/* Grid overlay for cyberpunk effect */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(16, 16, 20, 0.7) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 16, 20, 0.7) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Form wrapper with glowing border */
+.formWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  background-color: rgba(17, 17, 23, 0.85);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 230, 180, 0.15), 0 0 40px rgba(0, 230, 180, 0.05), inset 0 0 15px rgba(0, 230, 180, 0.05);
+  border: 1px solid rgba(0, 230, 180, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+/* Title styling */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(0, 230, 180, 0.5);
+}
+
+.highlight {
+  color: #00e6b4;
+}
+
+/* Subtitle styling */
+.subtitle {
+  text-align: center;
+  color: #a0a0c0;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Input group */
+.inputGroup {
+  position: relative;
+}
+
+/* Label styling */
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #00e6b4;
+  text-shadow: 0 0 5px rgba(0, 230, 180, 0.3);
+  font-weight: 500;
+}
+
+/* Input styling */
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: rgba(13, 13, 17, 0.8);
+  border: 1px solid rgba(0, 230, 180, 0.2);
+  border-radius: 4px;
+  color: #e0e0ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 230, 180, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #00e6b4;
+  box-shadow: 0 0 10px rgba(0, 230, 180, 0.3);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(160, 160, 192, 0.6);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.85rem;
+}
+
+/* Button styling with glow effect */
+.button {
+  position: relative;
+  padding: 16px 30px;
+  background: linear-gradient(45deg, #00b38a, #00e6b4);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 0 15px rgba(0, 230, 180, 0.3);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 230, 180, 0.5), 0 0 40px rgba(0, 230, 180, 0.2);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00e6b4, #ff0088, #00e6b4);
+  background-size: 400% 400%;
+  z-index: -1;
+  border-radius: 6px;
+  animation: glowing 3s ease infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.buttonText {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container{
+    margin-top: 20px;
+  }
+  .formWrapper {
+    padding: 30px 25px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .button {
+    padding: 14px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .form {
+    gap: 20px;
+  }
+
+  .input,
+  .textarea {
+    padding: 12px 14px;
+  }
+}

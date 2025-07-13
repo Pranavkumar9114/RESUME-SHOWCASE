@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "PlayStation",
+    "description": "Experience next-gen gaming with ultra-fast loading and stunning visuals.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+    "color": "red",
+    "link": "/Playstation"
+  },
+  {
+    "id": 2,
+    "name": "Xbox",
+    "description": "The most powerful Xbox ever with 4K gaming and immersive experience.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941864/211140_e1csjf.jpg",
+    "color": "green",
+    "link": "/XboxShowcase"
+  },
+  {
+    "id": 3,
+    "name": "Consoles",
+    "description": "Play anywhere, anytime with the versatile hybrid gaming console.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941864/3881710_p2i3to.jpg",
+    "color": "red",
+    "link": "/Console"
+  },
+  {
+    "id": 4,
+    "name": "PC Components",
+    "description": "Play anywhere, anytime with the versatile hybrid gaming console.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/117776_nq9sls.jpg",
+    "color": "green",
+    "link": "/PcComponent"
+  }
+]

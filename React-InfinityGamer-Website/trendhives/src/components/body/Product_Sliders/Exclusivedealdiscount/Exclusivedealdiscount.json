@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Smartphone Bonanza",
+    "description": "Get the latest flagship smartphones at unbeatable prices.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+    "discount": 30,
+    "rating": 4.5,
+    "originalPrice": 999
+  },
+  {
+    "id": 2,
+    "title": "Luxury Watches Sale",
+    "description": "Exclusive discounts on premium brand watches.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+    "discount": 40,
+    "rating": 4.8,
+    "originalPrice": 500
+  },
+  {
+    "id": 3,
+    "title": "Gaming Laptops Mega Deal",
+    "description": "High-performance gaming laptops at the best prices.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+    "discount": 25,
+    "rating": 4.6,
+    "originalPrice": 1500
+  },
+  {
+    "id": 4,
+    "title": "Wireless Earbuds Discount",
+    "description": "Premium wireless earbuds with crystal clear sound.",
+    "image": "https://res.cloudinary.com/do7ttqxgn/image/upload/v1738941863/3852996_nuijuh.jpg",
+    "discount": 50,
+    "rating": 4.7,
+    "originalPrice": 200
+  }
+]

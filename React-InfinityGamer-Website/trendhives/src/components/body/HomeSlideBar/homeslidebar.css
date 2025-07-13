@@ -1,0 +1,266 @@
+/* =========================
+   Container Styling
+   ========================= */
+.home-slider-bar {
+  width: 100%;
+  max-width: 1550px;
+  height: 650px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  margin-top: -19px;
+}
+
+/* =========================
+   Slick Slide Styling with Ken Burns Effect
+   ========================= */
+
+/* Ken Burns Effect - Slow Zoom-in Animation */
+.slide-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  animation: kenBurnsEffect 10s infinite alternate ease-in-out;
+}
+
+@keyframes kenBurnsEffect {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* =========================
+   Custom Arrow Styling
+   ========================= */
+.arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 35px;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+/* =========================
+   Slick Dots Styling
+   ========================= */
+.slick-dots {
+  position: absolute !important;
+  /* Ensures it overrides default position */
+  bottom: 10px !important;
+  /* Adjust positioning as needed */
+  display: flex !important;
+  /* Aligns dots properly */
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 10;
+  /* Ensures it stays above other elements */
+}
+
+/* Adjust dot spacing */
+.slick-dots li {
+  margin: 0 25px !important;
+  /* Adjust space between dots */
+  opacity: 1 !important;
+}
+
+/* Ensure dots stay inside the slider */
+.slick-dots li button {
+  width: 50px !important;
+  height: 15px !important;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  padding: 0;
+}
+
+/* Remove the default black dot */
+.slick-dots li button:before {
+  content: none !important;
+}
+
+/* Active dot styling */
+.slick-dots li.slick-active button {
+  width: 40px;
+  height: 15px;
+  background-color: #fff !important;
+}
+
+.slick-dots li button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+
+.slick-dots li button:active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================
+   Responsive Styles
+   ========================= */
+@media (max-width: 1390px) {
+  .home-slider-bar {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+    margin-top: -19px;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    /* Make sure the image takes up the full height */
+    object-fit: cover;
+    /* Ensures the image fills the container without distortion */
+    object-position: center center;
+    /* Center the image both horizontally and vertically */
+    animation: kenBurnsEffect 10s infinite alternate ease-in-out;
+  }
+
+  .slide {
+    height: 350px;
+  }
+
+  .slick-dots {
+    position: absolute !important;
+    /* Ensures it overrides default position */
+    bottom: 10px !important;
+    /* Adjust positioning as needed */
+    display: flex !important;
+    /* Aligns dots properly */
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 10;
+    /* Ensures it stays above other elements */
+  }
+
+  /* Adjust dot spacing */
+  .slick-dots li {
+    margin: 0 10px !important;
+    /* Adjust space between dots */
+    opacity: 1 !important;
+  }
+
+  /* Ensure dots stay inside the slider */
+  .slick-dots li button {
+    width: 25px !important;
+    height: 10px !important;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    padding: 0;
+  }
+
+  /* Remove the default black dot */
+  .slick-dots li button:before {
+    content: none !important;
+  }
+
+  /* Active dot styling */
+  .slick-dots li.slick-active button {
+    width: 40px;
+    height: 15px;
+    background-color: #fff !important;
+  }
+
+  .slick-dots li button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+  }
+
+
+  .slick-dots li button:active {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-slider-bar {
+    max-width: 808px;
+  }
+
+  .slide {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-slider-bar {
+    max-width: 620px;
+  }
+
+  .slide {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-slider-bar {
+    max-width: 410px;
+  }
+
+  .slide {
+    height: 250px;
+  }
+}
+
+@media (max-width: 375px) {
+  .home-slider-bar {
+    max-width: 360px;
+  }
+
+  .slide {
+    height: 220px;
+  }
+}
+
+@media (max-width: 320px) {
+  .home-slider-bar {
+    max-width: 300px;
+  }
+
+  .slide {
+    height: 200px;
+  }
+}

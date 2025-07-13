@@ -1,0 +1,222 @@
+/* Unique & Professional Preorder Styles */
+.preorder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack title and grid properly */
+}
+
+/* Title */
+.preorder-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white; /* Dark blue-gray */
+  margin-bottom: 40px;
+  margin-top: 40px;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+/* Title Underline Effect */
+.preorder-title::after {
+  content: "";
+  width: 60px;
+  height: 5px;
+  background: #ff7f50; /* Coral accent */
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* New Grid Layout */
+.preorder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 100px;
+}
+/* Card Layout */
+.preorder-card {
+  background: rgb(231, 224, 214);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 350px;
+  position: relative;
+}
+
+.preorder-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Unique Floating Effect */
+.preorder-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #ff7f50, #ff4757);
+}
+
+/* Image */
+.preorder-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Content */
+.preorder-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.preorder-game-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.preorder-description {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Price with Tag Style */
+.preorder-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #16a34a;
+  background: #ecfdf5;
+  padding: 5px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.preorder-game-name{
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+/* Call-to-Action Button */
+.preorder-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #ff7f50, #ff4757);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.preorder-btn:hover {
+  background: linear-gradient(90deg, #ff4757, #ff7f50);
+  transform: translateY(-2px);
+}
+
+
+/* Responsive Preorder Styles */
+@media (max-width: 1390px) {
+  /* Adjust the grid for medium screens */
+  .preorder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+    width: 90%; /* Adjust the grid container width */
+    margin: 0 auto; /* Center align the grid */
+  }
+
+  /* Adjust card layout */
+  .preorder-card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adjust title size */
+  .preorder-title {
+    font-size: 2.2rem;
+  }
+
+  /* Reduce image height for medium screens */
+  .preorder-image {
+    height: 220px;
+  }
+
+  /* Adjust button size */
+  .preorder-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .preorder-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Content */
+  .preorder-content {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .preorder-game-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 8px;
+  }
+  
+  .preorder-description {
+    font-size: 10px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  /* Price with Tag Style */
+.preorder-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #16a34a;
+  background: #ecfdf5;
+  padding: 5px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+/* Call-to-Action Button */
+.preorder-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #ff7f50, #ff4757);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.preorder-btn:hover {
+  background: linear-gradient(90deg, #ff4757, #ff7f50);
+  transform: translateY(-2px);
+}
+}

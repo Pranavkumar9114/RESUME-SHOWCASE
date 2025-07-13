@@ -1,0 +1,136 @@
+/* Container */
+
+.price-section {
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  margin: 10px 0;
+}
+
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    text-align: left; /* Align title to left */
+    position: relative;
+    margin-left: 90px;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* Dark blue-gray */
+    margin-bottom: 70px;
+    letter-spacing: 1.5px;
+    position: relative;
+  }
+  
+  /* Title Underline Effect */
+  .title::after {
+    content: "";
+    width: 60px;
+    height: 5px;
+    background: #ff7f50; /* Coral accent */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Grid - 3 Columns, 8 Rows */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+  }
+  
+  @media (max-width: 1390px) {
+    .container {
+        max-width: 90%;
+        margin: auto;
+        padding: 20px;
+        text-align: left; /* Align title to left */
+        position: relative;
+        margin-left: 28px;
+      }
+
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  /* Card Styling */
+  .card {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: #2D2D2D;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* overflow: hidden; */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 200px; 
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Image - Overflow Effect */
+  .image {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    left: -20px; /* Move the image out of the container */
+    top: 35%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .image {
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  /* Content */
+  .content {
+    margin-left: 140px; /* Shift content right */
+  }
+  
+  .game-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+  }
+  
+  /* Shop Now Button */
+  .shop-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease, transform 0.2s ease;
+  }
+  
+  .shop-btn:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+  }
+  

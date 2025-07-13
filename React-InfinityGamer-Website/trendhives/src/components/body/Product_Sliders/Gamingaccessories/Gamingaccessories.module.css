@@ -1,0 +1,209 @@
+/* Page Styling */
+.gaming-accessories {
+    min-height: 100vh;
+    padding: 30px 20px;
+    color: white;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  /* Section Heading */
+  .gaming-accessories h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.gaming-accessories h2::after {
+    content: "";
+    display: block;
+    width: 80px; /* Adjust width as needed */
+    height: 4px; /* Adjust thickness */
+    background-color: coral; /* Coral color */
+    margin: 8px auto 0; /* Center the line */
+}
+
+  
+  /* Grid Layout */
+  .accessories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px,1fr));
+    gap: 80px;
+    justify-items: center;
+  }
+  
+  /* Product Card */
+  .accessory-card {
+    background: linear-gradient(135deg, #1e1e1e, #252525);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+    max-width: 280px;
+    position: relative;
+    border: 2px solid transparent;
+  }
+  
+  /* RGB Lighting Effect on Hover */
+  .accessory-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 
+                0 0 40px rgba(0, 255, 0, 0.7), 
+                0 0 60px rgba(0, 0, 255, 0.7);
+    animation: rgbGlow 1.5s infinite alternate;
+  }
+  
+  @keyframes rgbGlow {
+    0% {
+      border-color: red;
+    }
+    33% {
+      border-color: green;
+    }
+    66% {
+      border-color: blue;
+    }
+    100% {
+      border-color: red;
+    }
+  }
+  
+  /* Product Image */
+  .accessory-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  /* Product Info */
+  .accessory-info {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .accessory-info h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .accessory-info p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin: 5px 0;
+  }
+  
+  /* Price & Button Section */
+  .price-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #4caf50;
+  }
+  
+  /* Buy Now Button */
+  .buy-now {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  
+  .buy-now:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Rating Badge */
+  .rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* background-color: #ffcc00;
+    color: black; */
+    background: linear-gradient(135deg, #1a1a40, #000000);
+    color: gold;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+
+  @media (max-width: 1309px) { /* Tablets */
+
+    .accessories-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 80px;
+        justify-items: center;
+      }
+
+    .gaming-accessories {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .gaming-accessories h2 {
+        font-size: 2rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .accessories-grid {
+        gap: 30px;
+    }
+
+    .accessory-card img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .accessory-info h3 {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      
+      .accessory-info p {
+        font-size: 0.6rem;
+        color: #bbb;
+        margin: 5px 0;
+      }
+      .price {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #4caf50;
+      }
+      .buy-now {
+        background-color: #007bff;
+        color: white;
+        margin-left: 3px;
+        padding: 4px 6px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: 0.3s;
+      }
+      
+}

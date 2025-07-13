@@ -1,0 +1,45 @@
+.carouselWrapper {
+    padding: 2rem;
+    background: #0d0d0d;
+    color: white;
+  }
+  
+  .carouselWrapper h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    width: 200px;
+    scroll-snap-align: center;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card img {
+    width: 100%;
+    display: block;
+    height: 280px;
+    object-fit: cover;
+  }
+  
+  .card p {
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  

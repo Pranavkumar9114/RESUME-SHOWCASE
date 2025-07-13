@@ -1,0 +1,772 @@
+/* Navbar Styles */
+.navbar-logo-nav {
+  max-width: 127px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo-nav img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes it white */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 12px;
+
+}
+
+.navbar-logo-nav img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgb(216, 40, 40));
+}
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 25px;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: auto;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.navbar-logo img {
+  height: 550px;
+  padding: 0px;
+  filter: brightness(0) invert(1);
+  /* Turns white background transparent, but affects colors */
+}
+
+
+/* Navigation Links (Desktop) */
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: coral;
+}
+
+.desktop-user-icon-wrapper{
+  display: ruby;
+}
+
+/* Hover effect for bottom slide transition */
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: coral;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+/* Info box under the tags */
+.navbar-links .info-box {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: none;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-links .nav-item:hover .info-box {
+  display: block;
+  opacity: 1;
+}
+
+/* Right Side (Sign In, Search, Wishlist, Cart) */
+.navbar-right a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-right a:hover {
+  color: coral;
+}
+
+/* Mobile Hamburger Menu */
+.navbar-mobile-menu {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 8px;
+  position: relative;
+  z-index: 1001;
+  /* Ensure it's above other elements */
+}
+
+.navbar-mobile-menu .hamburger {
+  width: 40px;
+  height: 5px;
+  background-color: white;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile-menu .hamburger::before,
+.navbar-mobile-menu .hamburger::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile-menu .hamburger::before {
+  top: -8px;
+}
+
+.navbar-mobile-menu .hamburger::after {
+  bottom: -8px;
+}
+
+/* Slide-out Menu */
+.navbar-slideout {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+}
+
+.navbar-slideout.open {
+  left: 0;
+}
+
+.navbar-slideout ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-slideout li a {
+  display: block;
+  color: #fff;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-slideout li a:hover {
+  background-color: coral;
+}
+
+.icon {
+  color: coral;
+
+}
+
+.navbar-slideout .icon {
+  color: rgb(255, 211, 80);
+}
+
+/* .nav-item-title p{
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+} */
+
+/* Dropdown container */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: grey;
+  border: 1px solid grey;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  width: 200px;
+  /* Set a fixed width */
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown list styling */
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  /* Ensure vertical layout */
+}
+
+/* Individual dropdown items */
+.dropdown ul li {
+  padding: 12px 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  /* Optional: Separate items */
+}
+
+/* Remove border from last item */
+.dropdown ul li:last-child {
+  border-bottom: none;
+}
+
+/* Link styling inside the dropdown */
+.dropdown ul li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Hover effect for dropdown items */
+.dropdown ul li:hover {
+  background-color: #f0f0f0;
+  transform: translateX(5px);
+}
+
+/* Optional: Fade-in effect for the dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+
+
+/* Basic dropdown styles */
+.navbar .nav-item {
+  position: relative;
+  /* Ensure the dropdown is positioned relative to the nav item */
+  display:ruby;
+}
+
+.navbar .dropdown2 {
+  display: none;
+  /* Hide by default */
+  position: absolute;
+  /* Position dropdown relative to the parent item */
+  top: 100%;
+  /* Position directly below the nav item */
+  left: 0;
+  width: 100%;
+  /* Adjust width to fit the parent */
+  background-color: #fff;
+  /* Adjust background color */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  /* Add shadow for effect */
+  z-index: 1;
+}
+
+/* Show dropdown when hovering over the nav item */
+.navbar .nav-item:hover .dropdown2 {
+  display: block;
+  /* Show dropdown on hover */
+}
+
+/* Dropdown item styles */
+.navbar .dropdown2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .dropdown2 li {
+  padding: 10px;
+}
+
+/* Default link styles */
+.navbar .dropdown2 li a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease;
+  /* Smooth transitions */
+}
+
+/* Hover effect for links */
+.navbar .dropdown2 li a:hover {
+  background-color: coral;
+  /* Highlight on hover */
+}
+
+/* 3D effect on click for inner list */
+.navbar .dropdown2 li a:hover {
+  transform: scale(0.98) translateX(4px);
+  /* Slightly scale down and move down to create the "pressed" effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Add shadow for depth */
+  border-radius: 0px 10px 0px 0px;
+}
+
+/* For mobile slide-out menu, position the dropdown just below the clicked item */
+.navbar-slideout .dropdown2 {
+  position: static;
+  /* Reset positioning for mobile */
+  top: auto;
+  left: auto;
+  width: 100%;
+  box-shadow: none;
+  background-color: rgb(245, 188, 90);
+  display: none;
+  /* Hide by default */
+  opacity: 0;
+  max-height: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.navbar-slideout .dropdown2.open {
+  display: block;
+  opacity: 1;
+  max-height: 500px;
+  /* Adjust based on content */
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* .navbar-slideout .dropdown2.open{
+  transform: scale(0.98) translateX(4px);
+} */
+
+/* Animation for the dropdown slide effect */
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9) rotate(-5deg);
+    /* Start with a small offset, slight scale, and rotate for dynamic entry */
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: translateY(5px) scale(1.05) rotate(5deg);
+    /* Slightly move down, scale up for bounce effect, and slight rotation */
+  }
+
+  100% {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    /* Reset to final position with no rotation */
+  }
+}
+
+.navbar-mobile-icons-search,
+.navbar-mobile-icons-signin {
+  display: none;
+}
+
+
+.navbar-slideout.open {
+  transform: translateX(0);
+}
+
+.slideout-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  max-width: 150px;
+}
+
+.slideout-auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.auth-button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.auth-button.signup {
+  background-color: coral;
+}
+
+.auth-button:hover {
+  opacity: 0.8;
+}
+
+.signin-icon{
+  font-size: 50px;
+  color: white;
+}
+
+.navbar-right{
+  padding-left: 135px;
+  padding-right: 10px;
+  display: ruby;
+}
+
+.custom-icon{
+  text-decoration: none;
+  color: white;
+}
+
+.custom-icon:hover{
+  text-decoration: none;
+  color: coral;
+  transition: 0.3s ease;
+}
+
+
+.custom-icon2{
+  text-decoration: none;
+  padding: 10px 10px 10px 10px;
+  color: white;
+  background-color: coral;
+  border-radius: 10px;
+}
+
+/* Wrapper for the icon and logout button */
+.user-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the logout button */
+.logout-button {
+  position: absolute;
+  top: 100%;  /* Place directly below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: coral;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+
+
+@media screen and (max-width: 1500px) {
+
+.navbar-right{
+  padding-left: 25px;
+}
+}
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 1390px) {
+  .desktop-user-icon-wrapper{
+    display: none;
+  }
+
+  .navbar-slideout.open {
+    transform: translateX(0);
+  }
+  
+  .slideout-logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo-image {
+    max-width: 150px;
+  }
+  
+  .slideout-auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .auth-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .auth-button.signup {
+    background-color: coral;
+  }
+  
+  .auth-button:hover {
+    opacity: 0.8;
+  }
+  
+
+  .navbar-mobile-icons-search,
+  .navbar-mobile-icons-signin {
+    display:contents;
+  }
+  
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+/* 
+  .navbar-mobile-icons-signin .icon {
+    font-size: 24px;
+    color: #fff;
+    background-color: coral;
+    border-radius: 50%;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 225px;
+    top: -3px
+  }
+
+  .navbar-mobile-icons-search .icon {
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 170px;
+    top: -3px
+  } */
+
+
+  .navbar-mobile-menu {
+    display: block;
+    position: absolute;
+    /* Position the hamburger menu at the top right */
+    top: 15px;
+    /* Adjust this value to your preference */
+    right: 0px;
+    /* Adjust this value to position it properly */
+  }
+
+  /* Center the logo on mobile */
+  .navbar-container {
+    justify-content: center;
+    /* Center the content */
+    position: relative;
+    /* Allow absolute positioning inside */
+  }
+
+  .navbar-logo {
+    position: absolute;
+    /* Fix the logo at the top center */
+    top: -50px !important;
+    /* Adjust this value to your preference */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center the logo horizontally */
+  }
+
+  .navbar-slideout ul {
+    padding-left: 0;
+  }
+
+  .navbar-logo img {
+    height: 400px;
+    padding: 0px;
+    filter: brightness(0) invert(1);
+    /* Turns white background transparent, but affects colors */
+  }
+
+
+  /* Basic dropdown styles */
+  .navbar .nav-item {
+    position: relative;
+    /* Ensure the dropdown is positioned relative to the nav item */
+  }
+
+  .navbar .dropdown2 {
+    display: none;
+    /* Hide by default */
+    position: absolute;
+    /* Position dropdown relative to the parent item */
+    top: 100%;
+    /* Position directly below the nav item */
+    left: 0;
+    width: 100%;
+    /* Adjust width to fit the parent */
+    background-color: #fff;
+    /* Adjust background color */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* Add shadow for effect */
+    z-index: 1;
+  }
+
+  /* Show dropdown when hovering over the nav item */
+  .navbar .nav-item:hover .dropdown2 {
+    display: block;
+    /* Show dropdown on hover */
+  }
+
+  /* Dropdown item styles */
+  .navbar .dropdown2 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar .dropdown2 li {
+    padding: 10px;
+  }
+
+  .navbar .dropdown2 li a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .navbar .dropdown2 li a:hover {
+    background-color: coral;
+    /* Highlight on hover */
+
+  }
+
+  /* For mobile slide-out menu, position the dropdown just below the clicked item */
+  .navbar-slideout .dropdown2 {
+    position: static;
+    /* Reset positioning for mobile */
+    top: auto;
+    left: auto;
+    width: 100%;
+    box-shadow: none;
+    background-color: rgb(245, 188, 90);
+    display: none;
+    /* Hide by default */
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
+  .navbar-slideout .dropdown2.open {
+    display: block;
+    opacity: 1;
+    max-height: 500px;
+    /* Adjust based on content */
+  }
+
+  @keyframes slideDown {
+    0% {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-20px) scale(0.9) rotate(-5deg);
+      /* Start with a small offset, slight scale, and rotate for dynamic entry */
+    }
+
+    50% {
+      opacity: 0.8;
+      transform: translateY(5px) scale(1.05) rotate(5deg);
+      /* Slightly move down, scale up for bounce effect, and slight rotation */
+    }
+
+    100% {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0deg);
+      /* Reset to final position with no rotation */
+    }
+  }
+
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}

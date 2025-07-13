@@ -1,0 +1,258 @@
+.exclusiveDeals {
+  text-align: center;
+}
+
+.exclusiveTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white; /* Dark blue-gray */
+  margin-bottom: 40px;
+  margin-top: 80px;
+  letter-spacing: 1.5px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+/* Title Underline Effect */
+.exclusiveTitle::after {
+  content: "";
+  width: 60px;
+  height: 5px;
+  background: #ff7f50; /* Coral accent */
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.dealsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 🛒 Deal Card */
+.dealCard {
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  text-align: left;
+  padding-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dealCard:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.3);
+}
+
+/* 🖼️ Image */
+.dealImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dealCard:hover .dealImage {
+  transform: scale(1.05);
+}
+
+.dealInfo {
+  padding: 18px;
+}
+
+/* 🏷️ Title */
+.dealTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+/* 📜 Description */
+.dealDescription {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+/* ⭐ Rating System */
+.dealRating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ratingScore {
+  margin-left: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+/* 💲 Pricing */
+.dealPricing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discountedPrice {
+  font-weight: bold;
+  color: #ff5733;
+}
+
+/* 🛍️ CTA Button */
+.dealButton {
+  width: 100%;
+  background: linear-gradient(135deg, #ff5733, #ff8800);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.dealButton:hover {
+  background: linear-gradient(135deg, #e64a19, #ff6600);
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 1500px) {
+    .dealsContainer {
+      width: calc(100% - 40px); /* Adjust width dynamically */
+      max-width: 100vw; /* Prevents overflow */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 0 auto; /* Centers container */
+      overflow-x: hidden;
+    }
+}
+
+@media (max-width: 1390px) {
+
+  .exclusiveTitle {
+    font-size: 38px;
+    font-weight: bold;
+    color: white; /* Dark blue-gray */
+    margin-bottom: 40px;
+    margin-top: 80px;
+    letter-spacing: 1.5px;
+    position: relative;
+  }
+
+  .dealsContainer {
+    width: 100%; /* Adjust the grid container width */
+    margin: 0 auto; /* Center align the grid */
+    grid-template-columns: repeat(2, 1fr); /* Stays 2 columns on medium screens */
+  }
+
+
+/* 🖼️ Image */
+.dealImage {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dealCard:hover .dealImage {
+  transform: scale(1.05);
+}
+
+.dealInfo {
+  padding: 18px;
+}
+
+/* 🏷️ Title */
+.dealTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+/* 📜 Description */
+.dealDescription {
+  font-size: 10px;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+/* ⭐ Rating System */
+.dealRating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ratingScore {
+  margin-left: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+/* 💲 Pricing */
+.dealPricing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discountedPrice {
+  font-weight: bold;
+  color: #ff5733;
+}
+
+/* 🛍️ CTA Button */
+.dealButton {
+  width: 100%;
+  background: linear-gradient(135deg, #ff5733, #ff8800);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.dealButton:hover {
+  background: linear-gradient(135deg, #e64a19, #ff6600);
+  transform: scale(1.05);
+}
+}
