@@ -33,15 +33,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMixin {
   final ScrollController _scrollController = ScrollController();
    @override
-  bool get wantKeepAlive => true; // This keeps the state of the widget alive
+  bool get wantKeepAlive => true; 
 
     @override
   void initState() {
     super.initState();
-    // Check for notification permission when the widget initializes
+   
      NotificationPermissionService.checkNotificationPermission(context);
          _scrollController.addListener(() {
-      setState(() {}); // Trigger rebuild to update button visibility
+      setState(() {}); 
     });
   }
 
@@ -49,11 +49,11 @@ class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMi
   Widget build(BuildContext context) {
     super.build(context);
     final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    // ignore: deprecated_member_use
+ 
     return WillPopScope(
       onWillPop: () async {
-        SystemNavigator.pop(); // Close the app
-        return false; // Prevent default back button action
+        SystemNavigator.pop(); 
+        return false; 
       },
       child: Scaffold(
         appBar: PreferredSize(
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMi
                   child: SizedBox(
                     height: MediaQuery.of(context).size.height * 0.8,
                     width: MediaQuery.of(context).size.width * 0.9,
-                    child: const SearchPage(), // Display the SearchPage inside the dialog
+                    child: const SearchPage(), 
                   ),
                 ),
               );
@@ -150,10 +150,10 @@ class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMi
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
               const Icon(
-              Icons.high_quality, // You can choose any icon that represents 4K or use a custom icon
+              Icons.high_quality,
               size: 50.0,
             ),
-              const SizedBox(width: 8.0), // Space between icon and text
+              const SizedBox(width: 8.0), 
               Text(
               '4K Wallpapers',
               style: GoogleFonts.akshar(fontSize: 30.0),

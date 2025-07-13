@@ -22,7 +22,7 @@ class HalfPageDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width:
-          MediaQuery.of(context).size.width / 2, // Set width to half of screen
+          MediaQuery.of(context).size.width / 2, 
       child: Drawer(
         child: Container(
           decoration: BoxDecoration(
@@ -58,7 +58,7 @@ class HalfPageDrawer extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.palette),
                 title: const Text('AI Wallpaper'),
-                onTap: onaiwallpaperView, // Call the callback function
+                onTap: onaiwallpaperView,
               ),
               ListTile(
                 leading: const Icon(Icons.image),

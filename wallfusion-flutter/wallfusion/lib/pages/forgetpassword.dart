@@ -32,7 +32,7 @@ class ForgetPasswordPage extends StatelessWidget {
           const SnackBar(content: Text('Password reset email sent')),
         );
         // ignore: use_build_context_synchronously
-        Navigator.pop(context); // Pop the forget password page
+        Navigator.pop(context); 
       } catch (e) {
         // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
@@ -73,31 +73,31 @@ class ForgetPasswordPage extends StatelessWidget {
               children: [
                 TextField(
                   controller: _emailController,
-                  cursorColor: const Color.fromARGB(255, 39, 18, 18), // Cursor color
-                  style: const TextStyle(color: Color.fromARGB(255, 39, 18, 18)), // Text color inside TextField
+                  cursorColor: const Color.fromARGB(255, 39, 18, 18), 
+                  style: const TextStyle(color: Color.fromARGB(255, 39, 18, 18)), 
                   decoration: InputDecoration(
                     //labelText: 'Email',
-                    labelStyle: const TextStyle(color: Color.fromARGB(255, 39, 18, 18)), // Label text color
+                    labelStyle: const TextStyle(color: Color.fromARGB(255, 39, 18, 18)), 
                     hintText: 'Enter your email',
-                    hintStyle: const TextStyle(color: Color.fromARGB(255, 39, 18, 18)), // Hint text color
+                    hintStyle: const TextStyle(color: Color.fromARGB(255, 39, 18, 18)), 
                     filled: true,
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 39, 18, 18), // Border color
+                        color: Color.fromARGB(255, 39, 18, 18),
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 39, 18, 18), // Border color when focused
+                        color: Color.fromARGB(255, 39, 18, 18), 
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 39, 18, 18), // Border color when enabled
+                        color: Color.fromARGB(255, 39, 18, 18), 
                       ),
                     ),
                   ),

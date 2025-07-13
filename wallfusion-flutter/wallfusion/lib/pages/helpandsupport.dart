@@ -27,7 +27,7 @@ class _HelpSupportPageState extends State<HelpSupportPage> {
   void _submitForm() async {
     if (_formKey.currentState!.validate()) {
       try {
-        // Save user message to Firestore
+      
         await FirebaseFirestore.instance.collection('support_messages').add({
           'name': _nameController.text,
           'email': _emailController.text,
@@ -35,12 +35,12 @@ class _HelpSupportPageState extends State<HelpSupportPage> {
           'timestamp': DateTime.now(),
         });
 
-        // Clear form fields
+
         _nameController.clear();
         _emailController.clear();
         _messageController.clear();
 
-        // Show confirmation dialog
+     
         showDialog(
           // ignore: use_build_context_synchronously
           context: context,
@@ -60,7 +60,7 @@ class _HelpSupportPageState extends State<HelpSupportPage> {
           },
         );
       } catch (e) {
-        // Handle error sending message
+
         showDialog(
           // ignore: use_build_context_synchronously
           context: context,
@@ -97,7 +97,7 @@ class _HelpSupportPageState extends State<HelpSupportPage> {
               color: Color.fromARGB(255, 236, 168, 136),
               size: 35,
             ),
-            const SizedBox( width:10), // Adjust the spacing between icon and text as needed
+            const SizedBox( width:10),
             Text(
               'Help & Support',
               style: GoogleFonts.akatab(

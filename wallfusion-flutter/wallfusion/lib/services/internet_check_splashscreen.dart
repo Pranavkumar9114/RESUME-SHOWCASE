@@ -1,4 +1,4 @@
-import 'dart:io'; // For exit()
+import 'dart:io'; 
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:wallfusion/pages/splashscreen.dart';
@@ -7,15 +7,15 @@ class InternetCheckUtil {
   static Future<bool> checkInternetConnection(BuildContext context) async {
     try {
       bool result = await InternetConnectionChecker().hasConnection;
-      // ignore: avoid_print
+  
       print("Initial internet connection status: $result");
       if (!result) {
-        // ignore: use_build_context_synchronously
+     
         await _showErrorDialog(context);
       }
       return result;
     } catch (e) {
-      // ignore: avoid_print
+     
       print("Error checking internet connection: $e");
       return false;
     }
@@ -27,17 +27,17 @@ class InternetCheckUtil {
     while (true) {
       bool isConnected = await InternetConnectionChecker().hasConnection;
       if (isConnected) {
-        // ignore: use_build_context_synchronously
-        Navigator.of(context).pop(); // Dismiss the current dialog
-        // ignore: use_build_context_synchronously
+
+        Navigator.of(context).pop();
+       
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => const SplashScreen()),
         );
-        return; // Exit the loop and method
+        return; 
       }
 
       await showDialog(
-        // ignore: use_build_context_synchronously
+  
         context: context,
         barrierDismissible: false,
         builder: (BuildContext context) {
@@ -85,8 +85,8 @@ class InternetCheckUtil {
               ),
               TextButton(
                 onPressed: () async {
-                  Navigator.of(context).pop(); // Close the current dialog
-                  await Future.delayed(const Duration(seconds: 2)); // Wait before retrying
+                  Navigator.of(context).pop(); 
+                  await Future.delayed(const Duration(seconds: 2)); 
                 },
                 child: const Text(
                   'Retry',
@@ -105,9 +105,9 @@ class InternetCheckUtil {
       );
 
       if (shouldExit) {
-        exit(0); // Close the application if the user chooses to exit
-        // ignore: dead_code
-        return; // Exit the method
+        exit(0); 
+   
+        return; 
       }
     }
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wallfusion/Custom_Widgets/theme.dart';
 import 'package:wallfusion/services/zip_operation.dart';
-import 'package:wallfusion/pages/splashscreen.dart';  // Replace with the correct import path
+import 'package:wallfusion/pages/splashscreen.dart';  
 import 'route.dart';
 
 void main() async {
@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
       home: extractionDone ? const SplashScreen() : ZipExtractorPage(),
       routes: {
         Myroutes.splashscreenroute: (context) => const SplashScreen(),
-        // Other routes can be added here
       },
     );
   }
