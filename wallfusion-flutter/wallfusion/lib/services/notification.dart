@@ -9,11 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class NotificationPage extends StatefulWidget {
   final FirebaseAnalytics analytics;
 
-  // ignore: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
   NotificationPage({required this.analytics});
 
   @override
-  // ignore: library_private_types_in_public_api
   _NotificationPageState createState() => _NotificationPageState();
 }
 
@@ -29,7 +27,6 @@ class _NotificationPageState extends State<NotificationPage> {
     _firebaseMessagingService.initialize(widget.analytics);
     _loadStoredMessages();
 
-    // Subscribe to the stream of new messages
     _subscription = _firebaseMessagingService.messageStream.listen((message) {
       setState(() {
         _messages.add(message);
@@ -57,7 +54,6 @@ class _NotificationPageState extends State<NotificationPage> {
     final prefs = await SharedPreferences.getInstance();
     final storedMessages = prefs.getStringList('notifications') ?? [];
 
-    // ignore: unused_local_variable
     final messageJson = jsonEncode(message.toMap());
     storedMessages.removeWhere(
         (msg) => jsonDecode(msg)['messageId'] == message.messageId);
@@ -68,7 +64,6 @@ class _NotificationPageState extends State<NotificationPage> {
     });
   }
 
-  // ignore: unused_element
   void _markAllAsRead() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt('unread_notifications', 0);
@@ -96,7 +91,6 @@ class NotificationList extends StatelessWidget {
   final List<RemoteMessage> messages;
   final void Function(RemoteMessage message) onDelete;
 
-  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
   NotificationList({required this.messages, required this.onDelete});
 
   @override
@@ -129,7 +123,6 @@ class FirebaseMessagingService {
     _analytics = analytics;
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
-      // ignore: avoid_print
       print(
           'Received a message: ${message.notification?.title} - ${message.notification?.body}');
 
@@ -147,7 +140,6 @@ class FirebaseMessagingService {
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      // ignore: avoid_print
       print('Message clicked!');
       _analytics.logEvent(
         name: 'message_clicked',
@@ -159,13 +151,11 @@ class FirebaseMessagingService {
     });
 
     _firebaseMessaging.getToken().then((token) {
-      // ignore: avoid_print
       print("Firebase Token: $token");
     });
   }
 
   Future<void> _saveMessage(RemoteMessage message) async {
-    // Check if the app is in the foreground
     if (WidgetsBinding.instance.lifecycleState == AppLifecycleState.resumed) {
       final prefs = await SharedPreferences.getInstance();
       final storedMessages = prefs.getStringList('notifications') ?? [];
@@ -197,10 +187,8 @@ class FirebaseMessagingService {
   }
 }
 
-// ignore: use_key_in_widget_constructors
 class NotificationBell extends StatefulWidget {
   @override
-  // ignore: library_private_types_in_public_api
   _NotificationBellState createState() => _NotificationBellState();
 }
 
