@@ -17,20 +17,20 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
   void _submitFeedback() async {
     if (_formKey.currentState!.validate()) {
       try {
-        // Save feedback to Firestore
+     
         await FirebaseFirestore.instance.collection('feedback').add({
           'name': _nameController.text,
           'rating': _rating,
           'timestamp': DateTime.now(),
         });
 
-        // Clear form fields
+  
         _nameController.clear();
         setState(() {
           _rating = 0;
         });
 
-        // Show confirmation dialog
+
         showDialog(
           // ignore: use_build_context_synchronously
           context: context,
@@ -51,7 +51,7 @@ class _FeedbackDialogState extends State<FeedbackDialog> {
           },
         );
       } catch (e) {
-        // Handle error sending feedback
+
         showDialog(
           // ignore: use_build_context_synchronously
           context: context,
