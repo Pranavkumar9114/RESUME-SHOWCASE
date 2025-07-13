@@ -1,0 +1,46 @@
+{
+    "days": [
+      {
+        "day": "Monday",
+        "urls": [
+          "https://wallpaperaccess.com/full/6469930.jpg"
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "urls": [
+          "https://wallpaperaccess.com/full/43869.jpg"
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "urls": [
+          "https://wallpaperaccess.com/full/43871.jpg"
+        ]
+      },
+      {
+        "day": "Thursday",
+        "urls": [
+          "https://wallpaperaccess.com/full/43877.jpg"
+        ]
+      },
+      {
+        "day": "Friday",
+        "urls": [
+          "https://wallpaperaccess.com/full/43878.jpg"
+        ]
+      },
+      {
+        "day": "Saturday",
+        "urls": [
+          "https://wallpaperaccess.com/full/43880.jpg"
+        ]
+      },
+      {
+        "day": "Sunday",
+        "urls": [
+          "https://wallpaperaccess.com/full/31227.jpg"
+        ]
+      }
+    ]
+  }

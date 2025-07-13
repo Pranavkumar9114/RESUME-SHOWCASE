@@ -1,0 +1,81 @@
+{
+    "days": [
+      {
+        "day": "Monday",
+        "urls": [
+          "https://images4.alphacoders.com/135/1351657.png",
+          "https://images8.alphacoders.com/540/540367.jpg",
+          "https://images5.alphacoders.com/135/1352159.png",
+          "https://images5.alphacoders.com/304/304710.png",
+          "https://images5.alphacoders.com/135/1351042.png",
+          "https://images5.alphacoders.com/110/1104544.jpg"
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "urls": [
+            "https://images5.alphacoders.com/135/1358643.png",
+            "https://images5.alphacoders.com/107/1078653.jpg",
+            "https://images3.alphacoders.com/135/1358644.png",
+            "https://images6.alphacoders.com/136/1366766.jpeg",
+            "https://images4.alphacoders.com/135/1358645.png",
+            "https://images.alphacoders.com/107/1078355.jpg"
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "urls": [
+            "https://images4.alphacoders.com/136/1365077.png",
+            "https://images.alphacoders.com/105/1059264.jpg",
+            "https://images4.alphacoders.com/136/1369885.jpeg",
+            "https://avatarfiles.alphacoders.com/322/322234.png",
+            "https://images.alphacoders.com/120/1207737.jpg",
+            "https://picfiles.alphacoders.com/270/270004.jpg"
+        ]
+      },
+      {
+        "day": "Thursday",
+        "urls": [
+            "https://images8.alphacoders.com/136/1362659.png",
+            "https://images2.alphacoders.com/108/1085967.jpg",
+            "https://images7.alphacoders.com/114/1146595.jpg",
+            "https://avatarfiles.alphacoders.com/302/302353.jpg",
+            "https://images2.alphacoders.com/127/1279088.jpg",
+            "https://picfiles.alphacoders.com/583/583040.jpg"
+        ]
+      },
+      {
+        "day": "Friday",
+        "urls": [
+            "https://images.alphacoders.com/114/1146569.jpg",
+            "https://images7.alphacoders.com/780/780120.jpg",
+            "https://images.alphacoders.com/126/1268124.jpg",
+            "https://picfiles.alphacoders.com/270/270012.jpg",
+            "https://images2.alphacoders.com/106/1062171.jpg",
+            "https://artfiles.alphacoders.com/123/123629.jpg"
+        ]
+      },
+      {
+        "day": "Saturday",
+        "urls": [
+            "https://images5.alphacoders.com/127/1273180.jpg",
+            "https://wallpaperaccess.com/full/97347.jpg",
+            "https://images6.alphacoders.com/390/390141.jpg",
+            "https://wallpaperaccess.com/full/97362.jpg",
+            "https://images7.alphacoders.com/136/1367972.png",
+            "https://wallpaperaccess.com/full/97410.jpg"
+        ]
+      },
+      {
+        "day": "Sunday",
+        "urls": [
+            "https://images6.alphacoders.com/308/308068.jpg",
+            "https://wallpaperaccess.com/full/805525.jpg",
+            "https://images5.alphacoders.com/937/937415.png",
+            "https://wallpaperaccess.com/full/805521.jpg",
+            "https://images6.alphacoders.com/937/937405.png",
+            "https://wallpaperaccess.com/full/886699.jpg"
+        ]
+      }
+    ]
+  }

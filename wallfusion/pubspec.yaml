@@ -1,0 +1,176 @@
+name: wallfusion
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  vector_math: ^2.1.4
+  google_fonts: ^6.2.1
+  animated_button: ^0.2.0
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.6
+  velocity_x: ^4.2.1
+  firebase_core: ^3.1.1
+  firebase_auth: ^5.1.1
+  cloud_firestore: ^5.0.2
+  firebase_database: ^11.0.2
+  shared_preferences: ^2.2.3
+  google_sign_in: ^6.2.1
+  carousel_slider: ^4.2.1
+  photo_view: ^0.15.0
+  permission_handler: ^11.3.1
+  fluttertoast: ^8.2.6
+  dio: ^5.4.3+1
+  #image_save: ^5.0.0
+  path_provider: ^2.1.3
+  http: ^1.2.1
+  saver_gallery: ^3.0.5
+  smooth_page_indicator: ^1.1.0
+  font_awesome_flutter: ^10.7.0
+  flutter_local_notifications: ^17.2.1
+  provider: ^6.1.2
+  video_player: ^2.9.1
+  cached_network_image: ^3.3.1
+  flutter_cache_manager: ^3.3.2
+  flutter_spinkit: ^5.2.1
+  flutter_image_compress: ^2.3.0
+  extended_image: ^8.2.1
+  image: ^4.2.0
+  archive: ^3.6.1
+  firebase_messaging: ^15.0.3
+  firebase_in_app_messaging: ^0.8.0+3
+  firebase_analytics: ^11.2.0
+  open_app_settings: ^2.0.1
+  internet_connection_checker_plus: ^2.5.0
+  internet_connection_checker: ^0.0.1+3
+  firebase_storage: ^12.1.1
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo4.png"
+  android_icon: true
+  ios_icon: true
+  remove_alpha_ios: true  # Ensure no alpha channel is present in the iOS icons
+  adaptive_icon_background: "#000000"
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/logo1.png
+    - assets/images/logo2.png
+    - assets/images/logo4.png
+    - assets/images/poster_image1.jpg
+    - assets/images/poster_image2.jpg
+    - assets/images/poster_image3.jpg
+    - assets/images/poster_image4.jpg
+    - assets/images/splashscreen_background/splashscreen_bg.jpg
+    - assets/images/splashscreen_background/splashscreen_bg2.png
+    - assets/images/splashscreen_background/splashscreen_bg3.jpg
+    - assets/images/splashscreen_background/splashscreen_bg4.png
+    - assets/images/splashscreen_background/splashscreen_bg5.png
+    - assets/images/splashscreen_background/splashscreen_bg6.jpg
+    - assets/images/splashscreen_background/splashscreen_bg7.jpg
+    - assets/images/secure.png
+    - assets/images/image.json
+    - assets/images/image2.json
+    - assets/images/days_data_carouselslider.json
+    - assets/images/days_data_mcarouselslider.json
+    - assets/images/days_data_t_phoneimageslider.json
+    - assets/images/days_data_p_phoneimageslider.json
+    - assets/images/grid/days_data_anime_gridimageshower.json
+    - assets/images/grid/days_data_marvel_gridimageshower.json
+    - assets/images/grid/days_data_aiwall_gridimageshower.json
+    - assets/images/grid/days_data_dc_gridimageshower.json
+    - assets/images/grid/days_data_suggestion_gridimageshower.json
+    - assets/images/singleimageslider/slide1.json
+    - assets/images/singleimageslider/slide2.json
+    - assets/images/singleimageslider/slide3.json
+    - assets/images/singleimageslider/slide4.json
+    - assets/images/singleimageslider/slide5.json
+    - assets/images/singleimageslider/slide6.json
+    - assets/images/singleimageslider/slide7.json
+    - assets/images/singleimageslider/slide8.json
+    - assets/images/singleimageslider/slide9.json
+    - assets/images/singleimageslider/slide10.json
+    - assets/images/video/anime_videourls.json
+    - assets/images/video/marvel_videourls.json
+    - assets/images/video/games_videourls.json
+    - assets/images/video/suggestions_videourls.json
+    # - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/Poppins/Poppins-Regular.ttf
+        - asset: assets/Poppins/Poppins-Bold.ttf
+        - asset: assets/Poppins/Poppins-Italic.ttf
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
+  
