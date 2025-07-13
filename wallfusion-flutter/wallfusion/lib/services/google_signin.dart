@@ -9,8 +9,6 @@ class AuthService {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
-        // The user canceled the sign-in
-        // ignore: avoid_print
         print('Google sign-in aborted by user');
         return null;
       }
@@ -25,17 +23,17 @@ class AuthService {
       UserCredential userCredential = await _auth.signInWithCredential(credential);
 
       if (userCredential.additionalUserInfo!.isNewUser) {
-        // ignore: avoid_print
+
         print('New user signed in with Google');
-        // Handle new user scenario if needed
+  
       } else {
-        // ignore: avoid_print
+
         print('Existing user signed in with Google');
       }
 
       return userCredential.user;
     } catch (e) {
-      // ignore: avoid_print
+
       print('Error during Google sign-in: $e');
       return null;
     }
@@ -45,9 +43,9 @@ class AuthService {
     try {
       await _auth.signOut();
       await _googleSignIn.signOut();
-      await _googleSignIn.disconnect(); // Disconnect to clear cached credentials
+      await _googleSignIn.disconnect(); 
     } catch (e) {
-      // ignore: avoid_print
+ 
       print('Error signing out: $e');
     }
   }
