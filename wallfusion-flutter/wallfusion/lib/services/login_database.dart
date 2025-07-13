@@ -17,7 +17,6 @@ class LoginDatabase {
         password: password,
       );
 
-      // Fetch the user document from Firestore
       DocumentSnapshot userDoc = await _firestore
           .collection('users')
           .doc(userCredential.user?.uid)
@@ -34,9 +33,9 @@ class LoginDatabase {
         throw Exception('User document does not exist.');
       }
     } catch (e) {
-      // ignore: avoid_print
+
       print('Error signing in: $e');
-      // ignore: use_rethrow_when_possible
+
       throw e;
     }
   }
