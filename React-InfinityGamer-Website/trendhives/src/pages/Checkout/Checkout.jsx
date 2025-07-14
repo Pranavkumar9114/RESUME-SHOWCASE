@@ -56,7 +56,7 @@ export default function Checkout() {
     }
   
     const options = {
-      key: "rzp_test_YA0SdS2HaAPsZ0", 
+      key: "", 
       amount: Math.round(total * 100),
       currency: "INR",
       name: "INFINITY GAMER",
