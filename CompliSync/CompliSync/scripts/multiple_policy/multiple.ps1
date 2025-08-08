@@ -1,17 +1,11 @@
-# Define constants for log file path
-# Get the current user's AppData Roaming folder
 $roamingAppData = [System.Environment]::GetFolderPath('ApplicationData')
 
-# Define the app folder
 $appFolder = Join-Path $roamingAppData "CompliSync"
 
-# Define the Temp folder path
 $tempFolder = Join-Path $appFolder "Temp"
 
-# Define the full temp policy file path
 $logFilePath = Join-Path $tempFolder "multiple_policy_update_log.txt"
 
-# Function to log messages with timestamp
 function Log-Message {
     param (
         [string]$message
@@ -19,7 +13,6 @@ function Log-Message {
     Add-Content -Path $logFilePath -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - $message"
 }
 
-# Create or clear the log file
 if (-Not (Test-Path $logFilePath)) {
     New-Item -Path $logFilePath -ItemType File -Force
 } else {
@@ -27,13 +20,11 @@ if (-Not (Test-Path $logFilePath)) {
 }
 
 try {
-    # Log script start
     Log-Message "=================================================="
     Log-Message "        Policy Update Log - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
     Log-Message "=================================================="
     Log-Message ""
 
-    # Log current policies before changes
     Log-Message "--------------------------------------------------"
     Log-Message "          Default Policies Values"
     Log-Message "--------------------------------------------------"
@@ -45,7 +36,6 @@ try {
         }
     }
 
-    # Check and log current Password Complexity setting
     secedit /export /cfg C:\secpol.cfg
     $complexityStatus = Select-String -Path C:\secpol.cfg -Pattern "PasswordComplexity = (\d)" | ForEach-Object { $_.Matches.Groups[1].Value }
     if ($complexityStatus -eq "1") {
