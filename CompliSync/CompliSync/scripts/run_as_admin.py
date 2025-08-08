@@ -9,10 +9,8 @@ def run_powershell_as_admin(script_path):
         print("Error: Script not found!")
         sys.exit(1)
 
-    # Build PowerShell command
     command = f'powershell -ExecutionPolicy Bypass -File "{script_path}"'
 
-    # Request Admin Privileges
     try:
         ctypes.windll.shell32.ShellExecuteW(None, "runas", "cmd.exe", f"/c {command}", None, 1)
     except Exception as e:
