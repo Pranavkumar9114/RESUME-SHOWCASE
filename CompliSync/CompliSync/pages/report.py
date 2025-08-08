@@ -13,27 +13,22 @@ risk_score = 0
 def reports(page: ft.Page):
     global compliance_score, audit_score, risk_score
 
-    # Text controls for displaying logs
     log_text = ft.Text("Compliance Log:", size=20, weight=ft.FontWeight.BOLD)
     log_content = ft.Text(selectable=True, size=16)
 
-    # Dropdowns for date and time selection
     date_dropdown = ft.Dropdown(label="Select Date", on_change=lambda e: update_time_dropdown(), text_size=16)
     time_dropdown = ft.Dropdown(label="Select Time", on_change=lambda e: load_selected_report(), text_size=16)
 
-    # File picker instance
     file_picker = ft.FilePicker(on_result=lambda e: save_exported_file(e.path))
     page.overlay.append(file_picker)
 
-    # Keep track of format selected and data to export
     export_format = {"format": None}
     current_data = {}
 
-    # Buttons for exporting
     export_csv_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Export CSV", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10) 
         ),
         on_click=lambda e: ask_save_path("csv")
     )
@@ -41,7 +36,7 @@ def reports(page: ft.Page):
     export_json_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Export JSON", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10) 
         ),
         on_click=lambda e: ask_save_path("json")
     )
@@ -64,7 +59,6 @@ def reports(page: ft.Page):
             # print(default_values)
             # print(expected_values)
 
-            # Compliance Score
             total_checks = len(expected_values)
             compliance_matches = 0
             for k, v in expected_values.items(): 
@@ -78,24 +72,20 @@ def reports(page: ft.Page):
             # print(compliance_matches)
             compliance_score = round((compliance_matches / total_checks) * 100, 2) if total_checks > 0 else 0
 
-            # Audit Score
             total_updates = len(updated_values)
             audit_matches = sum(
                 1 for k, v in updated_values.items() if default_values.get(k) == v
             )
             audit_score = round((audit_matches / total_updates) * 100, 2) if total_updates > 0 else 0
 
-            # Risk Score
             risk_score = round(((compliance_matches / total_checks) + (audit_matches / total_updates)) / 2, 2)
 
         except Exception as e:
-            # Default to 50 if any error occurs
             compliance_score = 0
             audit_score = 0
             risk_score = 0
             print(f"Error calculating scores: {e}")
 
-    # Function to parse filenames and extract datetime
     def parse_filename(filename):
         try:
             timestamp_str = filename.replace("policy_log_", "").replace(".json", "")
@@ -103,7 +93,6 @@ def reports(page: ft.Page):
         except ValueError:
             return None
 
-    # Function to get all report files
     def get_report_files():
         files = []
         for fname in os.listdir(POLICY_LOG_FOLDER):
@@ -113,7 +102,6 @@ def reports(page: ft.Page):
                     files.append((dt, fname))
         return sorted(files, key=lambda x: x[0], reverse=True)
 
-    # Function to update date dropdown
     def update_date_dropdown():
         files = get_report_files()
         dates = sorted(set(dt.strftime("%Y-%m-%d") for dt, _ in files), reverse=True)
@@ -122,12 +110,11 @@ def reports(page: ft.Page):
             stored_date = page.client_storage.get("report_selected_date")
             if stored_date in dates:
                 date_dropdown.value = stored_date
-                page.client_storage.remove("report_selected_date")  # optional clear
+                page.client_storage.remove("report_selected_date") 
             else:
                 date_dropdown.value = dates[0]
             update_time_dropdown()
 
-    # Function to update time dropdown based on selected date
     def update_time_dropdown():
         selected_date = date_dropdown.value
         files = get_report_files()
@@ -139,7 +126,6 @@ def reports(page: ft.Page):
 
     gauge_row = ft.Column()
 
-    # Function to load and display the selected report
     def load_selected_report():
         global compliance_score, audit_score, risk_score
 
@@ -155,7 +141,6 @@ def reports(page: ft.Page):
 
         calculate_scores(file_path)
 
-        # Rebuild the gauge row with new scores
         gauge_row.controls = [
             ft.Row(
                 controls=[
@@ -179,7 +164,6 @@ def reports(page: ft.Page):
 
         page.update()
 
-    # Ask user where to save file
     def ask_save_path(fmt):
         if not current_data:
             page.snack_bar = ft.SnackBar(ft.Text("No report loaded to export."))
@@ -190,7 +174,6 @@ def reports(page: ft.Page):
         suggested_name = f"exported_report_{date_dropdown.value}_{time_dropdown.value}.{fmt}"
         file_picker.save_file(file_name=suggested_name)
 
-    # Save to selected file
     def save_exported_file(path):
         fmt = export_format["format"]
         if not path or not fmt or not current_data:
@@ -212,7 +195,6 @@ def reports(page: ft.Page):
             page.snack_bar.open = True
         page.update()
 
-    # Initialize dropdowns
     update_date_dropdown()
 
     gauge_row.controls = [
@@ -226,7 +208,6 @@ def reports(page: ft.Page):
         )
     ]
 
-    # Return the layout
     return ft.Container(
         ft.Column(
             controls=[
@@ -235,7 +216,7 @@ def reports(page: ft.Page):
                     controls=[
                         date_dropdown,
                         time_dropdown,
-                        ft.Container(  # Push export buttons to the right
+                        ft.Container(
                             content=ft.Row(
                                 controls=[export_json_button, export_csv_button],
                                 spacing=10,
