@@ -69,8 +69,8 @@ class SystemMonitor(ft.Container):
                             ft.Container(
                                 content=percentage_text,
                                 alignment=ft.alignment.center,
-                                width=chart.width,  # Ensure same width as chart
-                                height=chart.height,  # Ensure same height as chart
+                                width=chart.width, 
+                                height=chart.height, 
                                 expand=True,
                             ),
                         ],
@@ -85,14 +85,13 @@ class SystemMonitor(ft.Container):
             ),
             padding=10,
             border_radius=10,
-            # border=ft.border.all(1, ft.colors.GREY_500),
             bgcolor=ft.colors.GREY_900
         )
 
     def start_monitoring_thread(self):
         def update_chart():
             while not hasattr(self, 'page') or self.page is None:
-                time.sleep(0.1)  # Wait until control is added to the page
+                time.sleep(0.1) 
 
             while True:
                 cpu_usage = psutil.cpu_percent()
@@ -128,7 +127,6 @@ def navbar(page, toggle_theme):
         automatically_imply_leading=False,
         title=ft.Row(
             controls=[
-                # Left Section: Only as wide as content
                 ft.Row(
                     controls=[
                         ft.IconButton(
@@ -138,7 +136,6 @@ def navbar(page, toggle_theme):
                     ],
                     alignment=ft.MainAxisAlignment.START,
                 ),
-                # Center Section: Expands to fill space
                 ft.Row(
                     controls=[
                         ft.Text(APP_NAME, size=24, weight=ft.FontWeight.BOLD),
@@ -152,7 +149,6 @@ def navbar(page, toggle_theme):
                     alignment=ft.MainAxisAlignment.START,
                     expand=True,
                 ),
-                # Right Section: Only as wide as content
                 ft.Row(
                     controls=[
                         # ft.IconButton(icon=ft.icons.NOTIFICATIONS, tooltip="Notifications"),
