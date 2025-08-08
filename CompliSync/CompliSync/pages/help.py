@@ -2,7 +2,6 @@ import flet as ft
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Initialize Firebase
 cred = credentials.Certificate(
     "automatedcompliancetool-firebase-adminsdk-fbsvc-d4b06a8810.json")
 firebase_admin.initialize_app(cred)
@@ -16,20 +15,18 @@ def submit_form(e, name_field, email_field, message_field, status_text):
     message = message_field.value.strip()
 
     if not name or not email or not message:
-        status_text.value = "⚠️ Please fill in all fields!"
+        status_text.value = "Please fill in all fields!"
         status_text.color = "red"
         e.page.update()
         return
 
-    # Add data to Firestore
     db.collection("contact_messages").add({
         "name": name,
         "email": email,
         "message": message,
     })
 
-    # Success message
-    status_text.value = "✅ Message sent successfully!"
+    status_text.value = "Message sent successfully!"
     status_text.color = "green"
     name_field.value = ""
     email_field.value = ""
@@ -45,12 +42,10 @@ def submit_faq(e, question_field):
     if not question:
         return
 
-    # Add question to Firestore with a placeholder answer
     db.collection("faqs").add(
         {"question": question, "answer": "Pending response from admin..."}
     )
 
-    # Clear input field
     question_field.value = ""
     e.page.update()
 
@@ -69,7 +64,6 @@ def load_faqs(faq_list):
 
         faq_list.update()
 
-    # Listen to Firestore updates
     db.collection("faqs").on_snapshot(on_snapshot)
 
 
@@ -81,10 +75,8 @@ def submit_feedback(e, feedback_field, rating_field):
     if not feedback or not rating:
         return
 
-    # Add feedback to Firestore
     db.collection("feedback").add({"feedback": feedback, "rating": rating})
 
-    # Clear input fields
     feedback_field.value = ""
     rating_field.value = ""
     e.page.update()
@@ -103,7 +95,6 @@ def load_feedback(feedback_list):
 
         feedback_list.update()
 
-    # Listen to Firestore updates
     db.collection("feedback").on_snapshot(on_snapshot)
 
 
@@ -120,13 +111,11 @@ def help():
             e, name_field, email_field, message_field, status_text),
     )
 
-    # Real-time FAQ section
     question_field = ft.TextField(label="Ask a question...", width=400)
     faq_list = ft.Column([])
     faq_submit_button = ft.ElevatedButton(
         "Submit Question", on_click=lambda e: submit_faq(e, question_field))
 
-    # Feedback Section
     feedback_field = ft.TextField(
         label="Your Feedback", width=400, multiline=True, max_lines=3)
     rating_field = ft.TextField(label="Rating (1-5)", width=100)
@@ -134,7 +123,6 @@ def help():
     feedback_submit_button = ft.ElevatedButton(
         "Submit Feedback", on_click=lambda e: submit_feedback(e, feedback_field, rating_field))
 
-    # Load FAQs and Feedback in real-time
     load_faqs(faq_list)
     load_feedback(feedback_list)
 
@@ -222,15 +210,14 @@ def help():
 
                 ft.Divider(),
 
-                # Real-Time FAQ Submission
-                ft.Text("🔍 Ask a Question", size=20,
+                ft.Text("Ask a Question", size=20,
                         weight=ft.FontWeight.BOLD),
                 question_field,
                 faq_submit_button,
                 faq_list,
 
                 ft.Divider(),
-                ft.Text("📨 Contact Administrator", size=20,
+                ft.Text("Contact Administrator", size=20,
                         weight=ft.FontWeight.BOLD),
                 name_field,
                 email_field,
@@ -239,7 +226,7 @@ def help():
                 status_text,
 
                 ft.Divider(),
-                ft.Text("📝 Submit Feedback", size=20,
+                ft.Text("Submit Feedback", size=20,
                         weight=ft.FontWeight.BOLD),
                 feedback_field,
                 rating_field,
