@@ -13,7 +13,6 @@ def get_latest_policy_log(folder):
     if not log_files:
         raise FileNotFoundError("No policy log files found in the folder.")
 
-    # Extract datetime from filenames and sort
     log_files.sort(key=lambda f: datetime.strptime(
         re.search(r"(\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})", f).group(1),
         "%Y-%m-%d_%H-%M-%S"
@@ -37,7 +36,6 @@ def calculate_scores(page):
         # print(default_values)
         # print(expected_values)
 
-        # Compliance Score
         total_checks = len(expected_values)
         compliance_matches = 0
         for k, v in expected_values.items(): 
@@ -51,24 +49,20 @@ def calculate_scores(page):
         # print(compliance_matches)
         compliance_score = round((compliance_matches / total_checks) * 100, 2) if total_checks > 0 else 0
 
-        # Audit Score
         total_updates = len(updated_values)
         audit_matches = sum(
             1 for k, v in updated_values.items() if default_values.get(k) == v
         )
         audit_score = round((audit_matches / total_updates) * 100, 2) if total_updates > 0 else 0
 
-        # Risk Score
         risk_score = round(((compliance_matches / total_checks) + (audit_matches / total_updates)) / 2, 2)
 
     except Exception as e:
-        # Default to 50 if any error occurs
         compliance_score = 0
         audit_score = 0
         risk_score = 0
         print(f"Error calculating scores: {e}")
 
-    # Save in client storage
     page.client_storage.set("compliance_score", compliance_score)
     page.client_storage.set("audit_score", audit_score)
     page.client_storage.set("risk_score", risk_score)
