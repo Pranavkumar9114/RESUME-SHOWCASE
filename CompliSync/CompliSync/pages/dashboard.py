@@ -9,38 +9,34 @@ from datetime import datetime
 def dashboard(page):
     calculate_scores(page)
 
-    # Get scores from client storage
     compliance_score = page.client_storage.get("compliance_score")
     audit_score = page.client_storage.get("audit_score")
     risk_score = page.client_storage.get("risk_score")
 
-    # Determine if we should show the compliance passed message
     show_compliance_passed = (compliance_score != 0 or audit_score != 0)
 
     def get_current_datetime():
         return datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    # Function to hide the container
     def hide_container(e):
         compliance_passed_container.visible = False
         e.page.update()
 
-    # Container with date/time and delete icon
     compliance_passed_container = ft.Container(
         content=ft.Row(
             controls=[
-                ft.Text(get_current_datetime(), size=12, color=ft.colors.GREEN_900),  # Left: Time
+                ft.Text(get_current_datetime(), size=12, color=ft.colors.GREEN_900), 
                 ft.Container(
                     content=ft.Text("✅ Compliance Passed", size=18, color=ft.colors.GREEN_700),
                     alignment=ft.alignment.center,
                     expand=True
-                ),  # Center: Message
+                ), 
                 ft.IconButton(
                     icon=ft.icons.DELETE_OUTLINE,
                     icon_color=ft.colors.RED,
                     tooltip="Delete",
                     on_click=hide_container
-                )  # Right: Trash icon
+                )  
             ],
             alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
             vertical_alignment=ft.CrossAxisAlignment.CENTER
@@ -94,7 +90,7 @@ def dashboard(page):
                             spacing=20,
                             expand=True,
                         ),
-                        compliance_passed_container  # ← This gets added at the bottom
+                        compliance_passed_container  
                     ],
                     spacing=20,
                     alignment=ft.MainAxisAlignment.START,
