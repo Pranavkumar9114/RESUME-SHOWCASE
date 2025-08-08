@@ -1653,7 +1653,6 @@ try {
 
 
 
-    # Apply policy changes immediately
     gpupdate /force
     Log-Message "[INFO] Group policy updated."
     
