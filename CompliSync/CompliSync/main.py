@@ -23,7 +23,6 @@ def main(page: ft.Page):
     else:
         page.theme_mode = ft.ThemeMode.LIGHT
 
-    # Navbar with theme toggle function
     def toggle_theme(e):
         """Toggle theme and refresh page contents."""
         page.theme_mode = (
@@ -32,17 +31,13 @@ def main(page: ft.Page):
         page.client_storage.set("theme_mode", "dark" if page.theme_mode == ft.ThemeMode.DARK else "light")
 
         page.update()
-        # Refresh current page to apply theme to all widgets
         refresh_current_page()
 
     page.appbar = navbar(page, toggle_theme)
 
-    # Sidebar
     drawer = sidebar()
-    # page.change_page = change_page  # Expose for use in components like calendar
     page.drawer = drawer
 
-    # Content Area
     content_area = ft.Column(expand=True)
     page.add(content_area)
 
@@ -70,14 +65,13 @@ def main(page: ft.Page):
 
     def refresh_current_page():
         """Force reloading the current page to update UI elements."""
-        change_page(None)  # Reload the current page
+        change_page(None) 
 
     drawer.on_change = change_page
-    page.change_page = change_page  # Expose for use in components like calendar
+    page.change_page = change_page 
 
-    # Always open Dashboard when the app starts
     drawer.selected_index = 0  
-    change_page(None)  # Render Dashboard
+    change_page(None) 
 
     page.update()
 

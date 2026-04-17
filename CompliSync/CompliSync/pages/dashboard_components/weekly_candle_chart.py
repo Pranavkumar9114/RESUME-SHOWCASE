@@ -10,7 +10,6 @@ def weekly_candle_chart(page):
     current_year = today.year
     current_month = today.month
 
-    # Parse report log dates
     def get_report_dates():
         reports = {}
         for fname in os.listdir(POLICY_LOG_FOLDER):
@@ -29,31 +28,27 @@ def weekly_candle_chart(page):
     report_dates = get_report_dates()
     report_date_keys = set(datetime.strptime(d, "%Y-%m-%d").date() for d in report_dates)
 
-    # Calendar layout
     month_label = ft.Text(f"{calendar.month_name[current_month]} {current_year}", size=18, weight=ft.FontWeight.BOLD)
     days_grid = ft.Column(spacing=5)
 
     def navigate_to_report(date_str: str):
         page.client_storage.set("report_selected_date", date_str)
-        page.drawer.selected_index = 2  # Go to reports
-        page.change_page(None)  # Trigger refresh to switch page
+        page.drawer.selected_index = 2 
+        page.change_page(None) 
 
     def update_calendar(year, month):
         month_label.value = f"{calendar.month_name[month]} {year}"
         days_grid.controls.clear()
 
-        # Weekday headers
         days_grid.controls.append(ft.Row([
             ft.Text(day, size=16, weight=ft.FontWeight.BOLD)
             for day in ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
         ], alignment=ft.MainAxisAlignment.CENTER))
 
-        # Day cells
         for week in calendar.monthcalendar(year, month):
             row = []
             for day in week:
                 if day == 0:
-                    # Empty cell
                     row.append(ft.Container(width=30, height=30))
                     continue
 
@@ -85,7 +80,6 @@ def weekly_candle_chart(page):
 
         page.update()
 
-    # Navigation
     def change_month(offset):
         nonlocal current_year, current_month
         current_month += offset

@@ -4,10 +4,9 @@ import os
 import time
 from utils.logger import log_action
 
-# Global variables
 run_compliance_button = None
 apply_policies_button = None
-compliance_status_text = None  # New global text field
+compliance_status_text = None  
 
 def compliance_actions(page):
     global run_compliance_button, apply_policies_button, compliance_status_text
@@ -21,7 +20,7 @@ def compliance_actions(page):
             return
 
         run_compliance_button.disabled = True
-        compliance_status_text.value = ""  # Clear previous status
+        compliance_status_text.value = ""  
         page.update()
 
         try:
@@ -32,12 +31,12 @@ def compliance_actions(page):
             import scripts.policy_log_formattor
 
             log_action("Compliance Check Completed", "Executed with admin privileges")
-            compliance_status_text.value = "✅ Compliance Passed"
+            compliance_status_text.value = "Compliance Passed"
             page.snack_bar = ft.SnackBar(ft.Text("Compliance check started as administrator."), open=True)
 
         except subprocess.CalledProcessError as ex:
             log_action("Compliance Check Failed", str(ex))
-            compliance_status_text.value = "❌ Compliance Failed"
+            compliance_status_text.value = "Compliance Failed"
             page.snack_bar = ft.SnackBar(ft.Text("Compliance check failed. Check logs for details."), open=True)
 
         run_compliance_button.disabled = False
@@ -49,7 +48,7 @@ def compliance_actions(page):
     run_compliance_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Start Audit", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10)  
         ),
         disabled=True,
         on_click=run_compliance
@@ -58,7 +57,7 @@ def compliance_actions(page):
     apply_policies_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Apply Selected Policies", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10)  
         ),
         disabled=True,
         on_click=apply_selected_policies
@@ -73,7 +72,7 @@ def compliance_actions(page):
                 alignment=ft.MainAxisAlignment.CENTER,
                 spacing=10,
             ),
-            compliance_status_text  # Added status text here
+            compliance_status_text 
         ],
         spacing=20,
         alignment=ft.MainAxisAlignment.CENTER,

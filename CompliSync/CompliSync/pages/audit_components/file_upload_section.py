@@ -18,7 +18,7 @@ def file_upload_section(page):
     upload_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Upload CIS PDF", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10) 
         ),
         on_click=None
     )
@@ -26,7 +26,7 @@ def file_upload_section(page):
     last_file_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Use Last Uploaded File", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10)  
         ),
         on_click=None,
         visible=False
@@ -35,7 +35,7 @@ def file_upload_section(page):
     fetch_drive_button = ft.ElevatedButton(
         content=ft.Container(
             content=ft.Text("Fetch from Drive", size=16),
-            padding=ft.padding.all(10)  # Adds padding around the text inside the button
+            padding=ft.padding.all(10)  
         ),
         on_click=None
     )
@@ -62,7 +62,6 @@ def file_upload_section(page):
                 log_action("File Uploaded", e.files[0].name)
                 page.update()
 
-                # --- Extract Policies ---
                 extract_policies(dest_path)
 
             else:
@@ -103,8 +102,6 @@ def file_upload_section(page):
             page.update()
             log_action("Used Last Extracted Uploaded File", json_path)
 
-            # --- Extract Policies ---
-            # extract_policies(last_pdf_file_path)
         else:
             uploaded_file_text.value = "Error: Last Extracted file not found. Please upload a new PDF."
             uploaded_file_text.visible = True
@@ -128,7 +125,6 @@ def file_upload_section(page):
                 uploaded_file_text.value = f"File uploaded: {file_name}\nPolicies extracted successfully."
                 log_action("Policy Extraction Success", extracted_file_path)
                 
-                # Enable compliance buttons after successful extraction
                 update_compliance_buttons_state(True)
             else:
                 uploaded_file_text.value = "Error: Policy extraction failed. Please upload a valid PDF."

@@ -1,8 +1,6 @@
 import flet as ft
 
-# Statistical Pie Chart Function with Dummy Data
 def statistical_pie_chart():
-    # Dummy Data for Pie Chart (Compliance Tools Stats)
     pie_data = [
         ("Tool A", 35),
         ("Tool B", 25),

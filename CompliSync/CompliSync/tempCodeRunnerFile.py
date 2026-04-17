@@ -31,14 +31,11 @@ def main(page: ft.Page):
         page.update()
         rebuild_dashboard()
 
-    # Navbar
     page.appbar = navbar(page, toggle_theme)
 
-    # Sidebar
     drawer = sidebar()
     page.drawer = drawer
 
-    # Content Area (init)
     content_area = ft.Column(expand=True)
     page.add(content_area)
 
@@ -69,7 +66,7 @@ def main(page: ft.Page):
         page.update()
 
     drawer.on_change = change_page
-    rebuild_dashboard()  # Initial render
+    rebuild_dashboard() 
     page.update()
 
 ft.app(target=main)
