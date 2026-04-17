@@ -5,7 +5,6 @@
         android:icon="@mipmap/ic_launcher">
         <meta-data
         android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyDpxEZBQ7x9ZdkCnk5EGeRi47CfAzS5jzU"/>
             <meta-data
         android:name="com.squareup.sdk.in-app-payments.PAYMENT_METHODS"
         android:value="card"/>
